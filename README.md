@@ -11,24 +11,24 @@ A curated collection of classic and recent machine learning papers from top venu
 
 | Domain | Description |
 |--------|-------------|
-| [Computer Vision](domains/cv.md) | Image classification, object detection, semantic segmentation |
-| [Natural Language Processing](domains/nlp.md) | Text classification, machine translation, question answering |
-| [Time Series Forecasting](domains/time-series.md) | Time series prediction and classification |
-| [Speech & Audio](domains/speech.md) | Speech recognition, synthesis, audio understanding |
-| [Graph Learning](domains/graph.md) | Node classification, link prediction, graph generation |
-| [Multimodal Learning](domains/multimodal.md) | Vision-language, cross-modal retrieval |
+| [Computer Vision](domains/cv/) | Image classification, object detection, semantic segmentation |
+| [Natural Language Processing](domains/nlp/) | Text classification, machine translation, question answering |
+| [Time Series Forecasting](domains/time-series/) | Time series prediction and classification |
+| [Speech & Audio](domains/speech/) | Speech recognition, synthesis, audio understanding |
+| [Graph Learning](domains/graph/) | Node classification, link prediction, graph generation |
+| [Multimodal Learning](domains/multimodal/) | Vision-language, cross-modal retrieval |
 
 ## Technique Directions
 
 | Technique | Description |
 |-----------|-------------|
-| [RNN / LSTM / GRU](techniques/rnn.md) | Recurrent networks and variants |
-| [CNN](techniques/cnn.md) | Convolutional network architecture evolution |
-| [Transformer & Attention](techniques/transformer.md) | Self-attention mechanisms and Transformer variants |
-| [Mamba & State Space Models](techniques/mamba.md) | SSM and selective state space models |
-| [GAN](techniques/gan.md) | Generative adversarial networks |
-| [Diffusion Models](techniques/diffusion.md) | Diffusion models and score-based models |
-| [Graph Neural Networks](techniques/gnn.md) | Graph convolution and message passing networks |
+| [RNN / LSTM / GRU](techniques/rnn/) | Recurrent networks and variants |
+| [CNN](techniques/cnn/) | Convolutional network architecture evolution |
+| [Transformer & Attention](techniques/transformer/) | Self-attention mechanisms and Transformer variants |
+| [Mamba & State Space Models](techniques/mamba/) | SSM and selective state space models |
+| [GAN](techniques/gan/) | Generative adversarial networks |
+| [Diffusion Models](techniques/diffusion/) | Diffusion models and score-based models |
+| [Graph Neural Networks](techniques/gnn/) | Graph convolution and message passing networks |
 
 ## Contributing
 
