@@ -6,38 +6,37 @@ A collection of must-read graph learning papers from top venues.
 
 ```mermaid
 graph TD
-    subgraph Spectral Methods
-        GCN["⭐ GCN (2017)"]
-    end
+    classDef spectral fill:#DBEAFE,stroke:#2563EB
+    classDef spatial fill:#D1FAE5,stroke:#059669
+    classDef theory fill:#FED7AA,stroke:#EA580C
+    classDef trans fill:#E9D5FF,stroke:#7C3AED
+    classDef pretrain fill:#FECDD3,stroke:#E11D48
+    classDef gen fill:#FEF08A,stroke:#CA8A04
+    classDef star fill:#FFD700,stroke:#B8860B
 
-    subgraph Spatial Methods
-        GraphSAGE["⭐ GraphSAGE (2017)"]
-        GraphSAGE --> GAT["⭐ GAT (2018)"]
-        GAT --> GIN["GIN (2019)"]
-    end
+    GCN["⭐ GCN (2017)"]:::star --> VGAE["VGAE (2016)"]:::gen
+    GCN --> GIN["GIN (2019)"]:::spatial
+    GCN --> PretrainGNN["Pre-training GNNs (2020)"]:::pretrain
 
-    subgraph Generative
-        GCN --> VGAE["VGAE (2016)"]
-    end
+    GraphSAGE["⭐ GraphSAGE (2017)"]:::star --> GAT["⭐ GAT (2018)"]:::star
+    GAT --> GIN
+    GAT -.-> GTN["Graph Transformer Networks (2019)"]:::trans
+    GraphSAGE --> PretrainGNN
 
-    subgraph Expressiveness & Theory
-        GCN --> GIN
-        GIN -.->|"WL-test analysis"| MPNN["MPNN Framework (2017)"]
-    end
-
-    subgraph Graph Transformer
-        GAT -.-> GTN["Graph Transformer Networks (2019)"]
-    end
-
-    subgraph Pre-training
-        GCN --> PretrainGNN["Pre-training GNNs (2020)"]
-        GraphSAGE --> PretrainGNN
-    end
-
-    style GCN fill:#FFD700
-    style GraphSAGE fill:#FFD700
-    style GAT fill:#FFD700
+    GIN -.-> MPNN["MPNN Framework (2017)"]:::theory
 ```
+
+### Paradigm Guide
+
+| Paradigm | Description |
+|:---|:---|
+| ![Spectral Methods](https://img.shields.io/badge/Spectral_Methods-DBEAFE?style=flat-square) | Graph convolutions defined in the spectral domain via graph Fourier transforms |
+| ![Spatial Methods](https://img.shields.io/badge/Spatial_Methods-D1FAE5?style=flat-square) | Message-passing approaches that aggregate neighbor features directly in graph space |
+| ![Expressiveness & Theory](https://img.shields.io/badge/Expressiveness_%26_Theory-FED7AA?style=flat-square) | Theoretical analysis of GNN expressiveness, connections to Weisfeiler-Lehman tests |
+| ![Graph Transformer](https://img.shields.io/badge/Graph_Transformer-E9D5FF?style=flat-square) | Attention-based architectures adapted for graph-structured data |
+| ![Pre-training](https://img.shields.io/badge/Pre--training-FECDD3?style=flat-square) | Self-supervised strategies for learning transferable graph representations |
+| ![Generative](https://img.shields.io/badge/Generative-FEF08A?style=flat-square) | Variational and generative models for graph structure generation |
+| ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Contents
 

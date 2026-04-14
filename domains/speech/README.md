@@ -6,29 +6,27 @@ A collection of must-read speech and audio processing papers from top venues.
 
 ```mermaid
 graph TD
-    subgraph End-to-End Recognition
-        DeepSpeech["⭐ Deep Speech 2 (2016)"]
-        DeepSpeech --> wav2vec["⭐ wav2vec 2.0 (2020)"]
-        wav2vec --> HuBERT["HuBERT (2021)"]
-        wav2vec --> Whisper["Whisper (2023)"]
-    end
+    classDef e2e fill:#DBEAFE,stroke:#2563EB
+    classDef hybrid fill:#D1FAE5,stroke:#059669
+    classDef gen fill:#E9D5FF,stroke:#7C3AED
+    classDef star fill:#FFD700,stroke:#B8860B
 
-    subgraph Hybrid Architecture
-        Conformer["Conformer (2020)"]
-        wav2vec -.-> Conformer
-    end
+    DeepSpeech["⭐ Deep Speech 2 (2016)"]:::star --> wav2vec["⭐ wav2vec 2.0 (2020)"]:::star
+    wav2vec --> HuBERT["HuBERT (2021)"]:::e2e
+    wav2vec --> Whisper["Whisper (2023)"]:::e2e
+    wav2vec -.-> Conformer["Conformer (2020)"]:::hybrid
 
-    subgraph Audio Generation
-        WaveNet["⭐ WaveNet (2016)"]
-        WaveNet -.-> DiffWave["DiffWave (2021)"]
-    end
-
-    DeepSpeech -.->|"RNN → Transformer"| wav2vec
-
-    style DeepSpeech fill:#FFD700
-    style WaveNet fill:#FFD700
-    style wav2vec fill:#FFD700
+    WaveNet["⭐ WaveNet (2016)"]:::star --> DiffWave["DiffWave (2021)"]:::gen
 ```
+
+### Paradigm Guide
+
+| Paradigm | Description |
+|:---|:---|
+| ![End-to-End Recognition](https://img.shields.io/badge/End--to--End_Recognition-DBEAFE?style=flat-square) | Models that directly map raw audio to text, eliminating hand-crafted feature pipelines |
+| ![Hybrid Architecture](https://img.shields.io/badge/Hybrid_Architecture-D1FAE5?style=flat-square) | Designs combining convolution and self-attention for joint local and global audio modeling |
+| ![Audio Generation](https://img.shields.io/badge/Audio_Generation-E9D5FF?style=flat-square) | Neural vocoders and generative models that synthesize high-fidelity audio waveforms |
+| ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Contents
 
