@@ -4,6 +4,7 @@ A collection of must-read time series forecasting papers from top venues.
 
 ## Contents
 
+- [Tech Tree](tech-tree.md) — Evolution and relationships of TSF techniques
 - [Classic Papers](classic.md) — Foundational and pioneering works
 - [2024](2024.md)
 - [2023](2023.md)

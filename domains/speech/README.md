@@ -4,6 +4,7 @@ A collection of must-read speech and audio processing papers from top venues.
 
 ## Contents
 
+- [Tech Tree](tech-tree.md) — Evolution and relationships of Speech & Audio techniques
 - [Classic Papers](classic.md) — Foundational and pioneering works
 - [2023](2023.md)
 - [2021](2021.md)
