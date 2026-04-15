@@ -57,7 +57,7 @@ graph TD
 
     FEDformer -.-> FiLM["FiLM (2022)"]:::freq
     FiLM --> FreTS["FreTS (2023)"]:::freq
-    FiLM --> WPMixer["WPMixer (2023)"]:::freq
+    FiLM --> WPMixer["WPMixer (2025)"]:::freq
     FreTS --> FITS["FITS (2024)"]:::freq
     FreTS --> PDF["PDF (2024)"]:::freq
     FreTS --> FilterNet["FilterNet (2024)"]:::freq
