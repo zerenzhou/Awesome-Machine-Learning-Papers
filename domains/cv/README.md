@@ -33,7 +33,12 @@ graph TD
     FasterRCNN --> FPN["FPN (2017)"]:::det
     FPN --> MaskRCNN["Mask R-CNN (2017)"]:::det
     RCNN -.-> YOLO["YOLO (2016)"]:::det
-    YOLO --> YOLOv9["YOLOv9 (2024)"]:::det
+    YOLO --> YOLOv2["YOLOv2 (2017)"]:::det
+    YOLOv2 --> YOLOv3["YOLOv3 (2018)"]:::det
+    YOLOv3 --> YOLOv4["YOLOv4 (2020)"]:::det
+    YOLOv3 -.-> YOLOX["YOLOX (2021)"]:::det
+    YOLOv4 --> YOLOv7["YOLOv7 (2023)"]:::det
+    YOLOv7 --> YOLOv9["YOLOv9 (2024)"]:::det
     YOLOv9 --> YOLOv10["YOLOv10 (2024)"]:::det
     YOLO -.-> YOLOWorld["YOLO-World (2024)"]:::det
     ResNet -.-> DETR["DETR (2020)"]:::det
@@ -132,25 +137,25 @@ graph TD
   YOLO 系列三作齐发（v9 PGI、v10 端到端、YOLO-World 开放词汇），DETR 方向持续演进（RT-DETR 首次实时超越 YOLO、Grounding DINO 开放集检测），SD3 以 Rectified Flow + DiT 重塑扩散架构，PixArt-α 以 10% 训练成本达到 DALL-E 2 质量，Vision Mamba/VMamba 将状态空间模型引入视觉，Depth Anything 系列建立单目深度估计基座标准，InternVL/Florence-2 推动视觉-语言统一基座，3DGS 向动态（4DGS）和生成（DreamGaussian）两个方向拓展
 
 - [2023](2023.md) — **分割一切开创视觉基座新纪元 · 可控生成爆发 · 3D 高斯兴起 · 端到端检测成熟**
-  SAM 以提示驱动范式重定义图像分割（10 亿级 mask 训练），DINOv2 证明自监督视觉特征可达有监督水平，ControlNet/DreamBooth/InstructPix2Pix 使扩散生成全面可控化，DALL-E 3 通过合成高描述性标注大幅提升文本对齐，3D Gaussian Splatting 以实时渲染挑战 NeRF 范式（SIGGRAPH），DINO-det/Co-DETR 推动端到端检测突破 COCO 新高，SiGLIP 以 Sigmoid 损失简化视觉-语言对比预训练，ConvNeXt V2 将掩码自监督引入 CNN
+  SAM 以提示驱动范式重定义图像分割（10 亿级 mask 训练），DINOv2 证明自监督视觉特征可达有监督水平，ControlNet/DreamBooth/InstructPix2Pix 使扩散生成全面可控化，DALL-E 3 通过合成高描述性标注大幅提升文本对齐，3D Gaussian Splatting 以实时渲染挑战 NeRF 范式（SIGGRAPH），YOLOv7 以 E-ELAN 和 bag-of-freebies 刷新实时检测记录，DINO-det/Co-DETR 推动端到端检测突破 COCO 新高，SiGLIP 以 Sigmoid 损失简化视觉-语言对比预训练，ConvNeXt V2 将掩码自监督引入 CNN
 
 - [2022](2022.md) — **自监督预训练革命 · 潜空间扩散奠基 · CNN 逆袭 · 文本到图像爆发**
   MAE 以 75% 掩码率实现高效自监督 ViT 预训练，Latent Diffusion 将扩散过程搬入潜空间开启 Stable Diffusion 时代，ConvNeXt 用 Transformer 设计理念现代化 CNN 并达到同等性能，DALL-E 2/Imagen 将文本到图像生成推向照片级真实，BEiT 将 BERT 掩码建模范式引入视觉 Transformer，Mask2Former 以掩码注意力统一全景/实例/语义分割
 
 - [2021](2021.md) — **Vision Transformer 主导 · CLIP 开创视觉-语言新范式 · 自监督觉醒**
-  ViT 以纯 Transformer 颠覆 CNN 在视觉中的绝对主导地位，Swin Transformer 引入移位窗口成为通用视觉骨干，CLIP 通过 4 亿图文对对比学习开启零样本视觉识别时代，Deformable DETR 以多尺度可变形注意力解决 DETR 收敛慢的问题为后续 DINO 系列奠基，DINO 自监督 ViT 涌现场景布局与物体边界信息，DeiT 通过知识蒸馏使 ViT 训练民主化，Score SDE 将得分匹配与扩散统一为连续 SDE 框架，MLP-Mixer 证明纯 MLP 也能做视觉识别
+  ViT 以纯 Transformer 颠覆 CNN 在视觉中的绝对主导地位，Swin Transformer 引入移位窗口成为通用视觉骨干，CLIP 通过 4 亿图文对对比学习开启零样本视觉识别时代，Deformable DETR 以多尺度可变形注意力解决 DETR 收敛慢的问题为后续 DINO 系列奠基，YOLOX 以无锚框设计和解耦检测头刷新 YOLO 系列性能，DINO 自监督 ViT 涌现场景布局与物体边界信息，DeiT 通过知识蒸馏使 ViT 训练民主化，Score SDE 将得分匹配与扩散统一为连续 SDE 框架，MLP-Mixer 证明纯 MLP 也能做视觉识别
 
 - [2020](2020.md) — **DETR 终结手工检测组件 · 扩散模型实用化 · NeRF 开启神经渲染 · 对比学习兴起**
-  DETR 以端到端 Transformer 消除锚框和 NMS 等手工设计组件，DDPM 证明扩散模型可达 GAN 级图像质量开启生成新范式，NeRF 以连续神经辐射场实现逼真新视角合成，SimCLR/BYOL 分别建立对比与非对比自监督学习范式，EfficientDet 以 BiFPN 和复合缩放实现检测效率最优
+  DETR 以端到端 Transformer 消除锚框和 NMS 等手工设计组件，YOLOv4 系统整合 bag-of-freebies/specials 技术在单 GPU 上达到最优速度-精度平衡，DDPM 证明扩散模型可达 GAN 级图像质量开启生成新范式，NeRF 以连续神经辐射场实现逼真新视角合成，SimCLR/BYOL 分别建立对比与非对比自监督学习范式，EfficientDet 以 BiFPN 和复合缩放实现检测效率最优
 
 - [2019](2019.md) — **EfficientNet 终结手工缩放 · StyleGAN 重塑高分辨率合成 · 无锚检测兴起**
   EfficientNet 提出复合缩放统一深度/宽度/分辨率搜索达到 CNN 效率巅峰，StyleGAN 以风格调制生成器实现前所未有的人脸合成质量和多尺度可控性，FCOS 以全卷积逐像素预测推动无锚检测方向，BigGAN 将 GAN 规模化证明更大模型产生更好图像
 
 - [2018](2018.md) — **注意力机制预热 · GAN 高分辨率突破 · 轻量化骨干确立**
-  Non-local Networks 以非局部操作捕捉长程依赖预示视觉自注意力时代，Progressive GAN 从低分辨率逐步增长实现稳定高分辨率 GAN 训练，SENet 以通道注意力赢得 ImageNet 2017，MobileNetV2 以倒残差结构确立移动端视觉骨干标准，CornerNet 以关键点配对开创无锚检测方向
+  Non-local Networks 以非局部操作捕捉长程依赖预示视觉自注意力时代，YOLOv3 引入 Darknet-53 和多尺度预测使单阶段检测器逼近两阶段精度，Progressive GAN 从低分辨率逐步增长实现稳定高分辨率 GAN 训练，SENet 以通道注意力赢得 ImageNet 2017，MobileNetV2 以倒残差结构确立移动端视觉骨干标准，CornerNet 以关键点配对开创无锚检测方向
 
 - [2017](2017.md) — **多任务检测框架成型 · 图像翻译范式确立 · 特征金字塔标准化**
-  FPN 建立多尺度特征金字塔成为检测标准组件，Mask R-CNN 扩展 Faster R-CNN 实现同步检测与实例分割，Pix2Pix/CycleGAN 建立配对与非配对图像翻译基本范式，DenseNet 以密集连接实现特征复用与参数高效化，形变卷积开启自适应几何建模
+  FPN 建立多尺度特征金字塔成为检测标准组件，Mask R-CNN 扩展 Faster R-CNN 实现同步检测与实例分割，YOLOv2 以锚框和多尺度训练改进 YOLO 并通过联合训练扩展到 9000+ 类别，Pix2Pix/CycleGAN 建立配对与非配对图像翻译基本范式，DenseNet 以密集连接实现特征复用与参数高效化，形变卷积开启自适应几何建模
 
 - [2016](2016.md) — **实时检测与对抗生成并行发展**
   YOLO 以单阶段回归框架首次实现实时目标检测，SSD 在多尺度特征图上进行单次检测兼顾速度与精度，DCGAN 确立卷积 GAN 架构规范并揭示有意义的隐空间结构
