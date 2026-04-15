@@ -26,7 +26,9 @@ graph TD
     PatchTST --> Pathformer["Pathformer (2024)"]:::trans
     iTransformer --> TimeXer["TimeXer (2024)"]:::trans
     iTransformer --> TimeBridge["TimeBridge (2025)"]:::trans
+    iTransformer --> HDT["HDT (2025)"]:::trans
     TimeXer --> EMAformer["EMAformer (2026)"]:::trans
+    TimeBridge --> APN["APN (2026)"]:::trans
 
     NBEATS["⭐ N-BEATS (2020)"]:::star --> Linear["⭐ LTSF-Linear (2023)"]:::star
     NBEATS --> NHiTS["N-HiTS (2023)"]:::mlp
@@ -35,11 +37,13 @@ graph TD
     Linear --> Koopa["Koopa (2023)"]:::mlp
     Linear --> TimeMixer["TimeMixer (2024)"]:::mlp
     TimeMixer --> TimeMixerPP["TimeMixer++ (2025)"]:::mlp
+    Linear --> SOFTS["SOFTS (2024)"]:::mlp
     Linear --> TimeBase["TimeBase (2025)"]:::mlp
 
     TCN["TCN (2018)"]:::cnn --> SCINet["SCINet (2022)"]:::cnn
     TCN --> TimesNet["TimesNet (2023)"]:::cnn
     TCN --> ModernTCN["ModernTCN (2024)"]:::cnn
+    TimesNet -.-> xPatch["xPatch (2025)"]:::cnn
 
     LSTM["LSTM"]:::rnn --> DeepAR["⭐ DeepAR (2020)"]:::rnn
     LSTM --> LSTNet["LSTNet (2018)"]:::rnn
@@ -53,6 +57,8 @@ graph TD
     FiLM --> FreTS["FreTS (2023)"]:::freq
     FreTS --> FITS["FITS (2024)"]:::freq
     FreTS --> PDF["PDF (2024)"]:::freq
+    FreTS --> FilterNet["FilterNet (2024)"]:::freq
+    FreTS --> CycleNet["CycleNet (2024)"]:::freq
 
     S4["S4 (2022)"]:::ssm --> TimeMachine["TimeMachine (2024)"]:::ssm
     S4 --> SMamba["S-Mamba (2024)"]:::ssm
@@ -68,6 +74,7 @@ graph TD
     MOIRAI --> MoiraiMoE["Moirai-MoE (2025)"]:::fm
     MOIRAI --> Moirai2["Moirai 2.0 (2025)"]:::fm
     Sundial -.-> Aurora["Aurora (2026)"]:::fm
+    Sundial -.-> OccamVTS["OccamVTS (2026)"]:::fm
     GPTx["GPT-2"]:::fm -.-> GPT4TS["GPT4TS (2023)"]:::fm
     GPTx -.-> TimeLLM["Time-LLM (2024)"]:::fm
     GPTx -.-> AutoTimes["AutoTimes (2024)"]:::fm
@@ -77,6 +84,10 @@ graph TD
     TSRAG["TS-RAG (2025)"]:::fm
 
     DeepAR -.-> TimeGrad["TimeGrad (2021)"]:::prob
+    TimeGrad --> ARMD["ARMD (2025)"]:::prob
+    TimeGrad --> NsDiff["NsDiff (2025)"]:::prob
+    TimeGrad -.-> CNDiff["CNDiff (2025)"]:::prob
+    Koopa -.-> K2VAE["K²VAE (2025)"]:::prob
 
     TS2Vec["TS2Vec (2022)"]:::repr --> CoST["CoST (2022)"]:::repr
 
@@ -96,7 +107,7 @@ graph TD
 | ![Frequency-domain](https://img.shields.io/badge/Frequency--domain-FEF08A?style=flat-square) | Approaches operating in spectral space, leveraging Fourier or Legendre transforms for efficient temporal pattern extraction |
 | ![SSM & Mamba](https://img.shields.io/badge/SSM_%26_Mamba-CCFBF1?style=flat-square) | State space models with selective mechanisms, offering linear-complexity alternatives for long-range temporal modeling |
 | ![Foundation Models & LLM](https://img.shields.io/badge/Foundation_Models_%26_LLM-E0E7FF?style=flat-square) | Large-scale pretrained models for zero-shot or few-shot forecasting, including LLM reprogramming and time series foundation models |
-| ![Probabilistic](https://img.shields.io/badge/Probabilistic-E5E7EB?style=flat-square) | Methods generating distributional forecasts via diffusion models or autoregressive likelihood estimation |
+| ![Probabilistic](https://img.shields.io/badge/Probabilistic-E5E7EB?style=flat-square) | Distributional forecasting via diffusion (ARMD, NsDiff), VAE (K²VAE), or autoregressive likelihood, capturing uncertainty beyond point estimates |
 | ![Representation Learning](https://img.shields.io/badge/Representation_Learning-DDD6FE?style=flat-square) | Self-supervised and contrastive methods learning universal time series representations for downstream tasks |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
