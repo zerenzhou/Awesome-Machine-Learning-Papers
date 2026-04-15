@@ -40,6 +40,9 @@ graph TD
     YOLOv4 --> YOLOv7["YOLOv7 (2023)"]:::det
     YOLOv7 --> YOLOv9["YOLOv9 (2024)"]:::det
     YOLOv9 --> YOLOv10["YOLOv10 (2024)"]:::det
+    YOLOv10 --> YOLOv12["YOLOv12 (2025)"]:::det
+    YOLOv12 --> YOLOv13["YOLOv13 (2025)"]:::det
+    YOLOv10 -.-> YOLOE["YOLOE (2025)"]:::det
     YOLO -.-> YOLOWorld["YOLO-World (2024)"]:::det
     ResNet -.-> DETR["DETR (2020)"]:::det
     DETR --> DeformDETR["Deformable DETR (2021)"]:::det
@@ -131,7 +134,7 @@ graph TD
   SAM 3 将语义概念引入分割实现概念驱动的检测/分割/追踪统一，Depth Anything 3 以单一 DINOv2 编码器统一多视图几何估计（超越 VGGT 44.3%），LLM2CLIP 用大语言模型增强 CLIP 文本编码器突破长文本瓶颈（AAAI 杰出论文），SANA-Video 以线性注意力实现分钟级高分辨率视频生成（16× 加速），Lyra 通过视频扩散自蒸馏实现无需多视图数据的 3D 场景重建
 
 - [2025](2025.md) — **基座模型全面渗透 · 视觉几何复兴 · 混合架构成熟 · 流编辑兴起**
-  SAM 2 将分割基座模型扩展至视频流式推理（ICLR 杰出论文），VGGT 以前馈 Transformer 统一 3D 几何推理（CVPR 最佳论文），Depth Anything 系列拓展至视频深度（Video Depth Anything），SigLIP 2 强化视觉-语言密集特征与定位能力，MambaVision 确立 Mamba-Transformer 混合视觉骨干，FlowEdit 实现无逆向流编辑（ICCV 最佳论文提名），TarFlow 证明归一化流可达扩散模型生成质量（ICML Oral），EoMT 证明普通 ViT 可直接用于分割
+  SAM 2 将分割基座模型扩展至视频流式推理（ICLR 杰出论文），VGGT 以前馈 Transformer 统一 3D 几何推理（CVPR 最佳论文），Depth Anything 系列拓展至视频深度（Video Depth Anything），YOLOv12 引入注意力机制取代 CNN 成为首个注意力驱动 YOLO（NeurIPS），YOLOE 实现零开销开放词汇检测与分割（ICCV），SigLIP 2 强化视觉-语言密集特征与定位能力，MambaVision 确立 Mamba-Transformer 混合视觉骨干，FlowEdit 实现无逆向流编辑（ICCV 最佳论文提名），TarFlow 证明归一化流可达扩散模型生成质量（ICML Oral），EoMT 证明普通 ViT 可直接用于分割
 
 - [2024](2024.md) — **检测三线并进 · 扩散架构革新 · SSM 入场 · 深度基座模型元年**
   YOLO 系列三作齐发（v9 PGI、v10 端到端、YOLO-World 开放词汇），DETR 方向持续演进（RT-DETR 首次实时超越 YOLO、Grounding DINO 开放集检测），SD3 以 Rectified Flow + DiT 重塑扩散架构，PixArt-α 以 10% 训练成本达到 DALL-E 2 质量，Vision Mamba/VMamba 将状态空间模型引入视觉，Depth Anything 系列建立单目深度估计基座标准，InternVL/Florence-2 推动视觉-语言统一基座，3DGS 向动态（4DGS）和生成（DreamGaussian）两个方向拓展
