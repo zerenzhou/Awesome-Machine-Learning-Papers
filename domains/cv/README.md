@@ -36,7 +36,7 @@ graph TD
     YOLO --> YOLOv9["YOLOv9 (2024)"]:::det
     YOLOv9 --> YOLOv10["YOLOv10 (2024)"]:::det
     YOLO -.-> YOLOWorld["YOLO-World (2024)"]:::det
-    FasterRCNN -.-> DETR["DETR (2020)"]:::det
+    ResNet -.-> DETR["DETR (2020)"]:::det
     DETR --> DeformDETR["Deformable DETR (2021)"]:::det
     DeformDETR --> DINODet["DINO-det (2023)"]:::det
     DINODet --> CoDETR["Co-DETR (2023)"]:::det
