@@ -29,8 +29,9 @@ graph TD
     iTransformer --> HDT["HDT (2025)"]:::trans
     TimeXer --> EMAformer["EMAformer (2026)"]:::trans
     TimeBridge --> APN["APN (2026)"]:::trans
+    TimeXer -.-> GTR["GTR (2026)"]:::trans
 
-    NBEATS["⭐ N-BEATS (2020)"]:::star --> Linear["⭐ LTSF-Linear (2023)"]:::star
+    NBEATS["⭐ N-BEATS (2020)"]:::star --> Linear["⭐ DLinear (2023)"]:::star
     NBEATS --> NHiTS["N-HiTS (2023)"]:::mlp
     Linear --> TiDE["TiDE (2023)"]:::mlp
     Linear --> TSMixer["TSMixer (2023)"]:::mlp
@@ -38,6 +39,7 @@ graph TD
     Linear --> TimeMixer["TimeMixer (2024)"]:::mlp
     TimeMixer --> TimeMixerPP["TimeMixer++ (2025)"]:::mlp
     Linear --> SOFTS["SOFTS (2024)"]:::mlp
+    Linear --> PatchMLP["PatchMLP (2025)"]:::mlp
     Linear --> TimeBase["TimeBase (2025)"]:::mlp
 
     TCN["TCN (2018)"]:::cnn --> SCINet["SCINet (2022)"]:::cnn
@@ -55,6 +57,7 @@ graph TD
 
     FEDformer -.-> FiLM["FiLM (2022)"]:::freq
     FiLM --> FreTS["FreTS (2023)"]:::freq
+    FiLM --> WPMixer["WPMixer (2023)"]:::freq
     FreTS --> FITS["FITS (2024)"]:::freq
     FreTS --> PDF["PDF (2024)"]:::freq
     FreTS --> FilterNet["FilterNet (2024)"]:::freq
