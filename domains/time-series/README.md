@@ -25,6 +25,8 @@ graph TD
     PatchTST --> iTransformer["iTransformer (2024)"]:::trans
     PatchTST --> Pathformer["Pathformer (2024)"]:::trans
     iTransformer --> TimeXer["TimeXer (2024)"]:::trans
+    iTransformer --> TimeBridge["TimeBridge (2025)"]:::trans
+    TimeXer --> EMAformer["EMAformer (2026)"]:::trans
 
     NBEATS["⭐ N-BEATS (2020)"]:::star --> Linear["⭐ LTSF-Linear (2023)"]:::star
     NBEATS --> NHiTS["N-HiTS (2023)"]:::mlp
@@ -32,6 +34,8 @@ graph TD
     Linear --> TSMixer["TSMixer (2023)"]:::mlp
     Linear --> Koopa["Koopa (2023)"]:::mlp
     Linear --> TimeMixer["TimeMixer (2024)"]:::mlp
+    TimeMixer --> TimeMixerPP["TimeMixer++ (2025)"]:::mlp
+    Linear --> TimeBase["TimeBase (2025)"]:::mlp
 
     TCN["TCN (2018)"]:::cnn --> SCINet["SCINet (2022)"]:::cnn
     TCN --> TimesNet["TimesNet (2023)"]:::cnn
@@ -53,15 +57,24 @@ graph TD
     S4["S4 (2022)"]:::ssm --> TimeMachine["TimeMachine (2024)"]:::ssm
     S4 --> SMamba["S-Mamba (2024)"]:::ssm
     SMamba --> MambaTS["MambaTS (2024)"]:::ssm
+    S4 --> LinOSS["LinOSS (2025)"]:::ssm
+    SMamba --> msMamba["ms-Mamba (2026)"]:::ssm
 
     PatchTST -.-> TimesFM["TimesFM (2024)"]:::fm
     PatchTST -.-> Timer["Timer (2024)"]:::fm
     Timer --> MOIRAI["MOIRAI (2024)"]:::fm
     Timer --> Moment["MOMENT (2024)"]:::fm
+    Timer --> Sundial["Sundial (2025)"]:::fm
+    MOIRAI --> MoiraiMoE["Moirai-MoE (2025)"]:::fm
+    MOIRAI --> Moirai2["Moirai 2.0 (2025)"]:::fm
+    Sundial -.-> Aurora["Aurora (2026)"]:::fm
     GPTx["GPT-2"]:::fm -.-> GPT4TS["GPT4TS (2023)"]:::fm
     GPTx -.-> TimeLLM["Time-LLM (2024)"]:::fm
     GPTx -.-> AutoTimes["AutoTimes (2024)"]:::fm
-    Chronos["Chronos (2024)"]:::fm
+    TimeLLM -.-> SELLM["SE-LLM (2026)"]:::fm
+    Chronos["Chronos (2024)"]:::fm --> Chronos2["Chronos-2 (2025)"]:::fm
+    TimeMoE["Time-MoE (2025)"]:::fm
+    TSRAG["TS-RAG (2025)"]:::fm
 
     DeepAR -.-> TimeGrad["TimeGrad (2021)"]:::prob
 
@@ -90,6 +103,8 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
+- [2026](2026.md)
+- [2025](2025.md)
 - [2024](2024.md)
 - [2023](2023.md)
 - [2022](2022.md)
