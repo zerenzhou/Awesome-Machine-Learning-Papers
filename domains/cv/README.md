@@ -37,10 +37,12 @@ graph TD
     YOLOv9 --> YOLOv10["YOLOv10 (2024)"]:::det
     YOLO -.-> YOLOWorld["YOLO-World (2024)"]:::det
     FasterRCNN -.-> DETR["DETR (2020)"]:::det
-    DETR --> DINODet["DINO-det (2023)"]:::det
-    DETR --> RTDETR["RT-DETR (2024)"]:::det
-    DETR -.-> Mask2Former["Mask2Former (2022)"]:::det
+    DETR --> DeformDETR["Deformable DETR (2021)"]:::det
+    DeformDETR --> DINODet["DINO-det (2023)"]:::det
+    DINODet --> CoDETR["Co-DETR (2023)"]:::det
+    DINODet --> RTDETR["RT-DETR (2024)"]:::det
     DINODet --> GroundingDINO["Grounding DINO (2024)"]:::det
+    DETR -.-> Mask2Former["Mask2Former (2022)"]:::det
 
     ResNet -.-> ViT["⭐ ViT (2021)"]:::star
     ViT --> DeiT["DeiT (2021)"]:::vit
@@ -136,7 +138,7 @@ graph TD
   MAE 以 75% 掩码率实现高效自监督 ViT 预训练，Latent Diffusion 将扩散过程搬入潜空间开启 Stable Diffusion 时代，ConvNeXt 用 Transformer 设计理念现代化 CNN 并达到同等性能，DALL-E 2/Imagen 将文本到图像生成推向照片级真实，BEiT 将 BERT 掩码建模范式引入视觉 Transformer，Mask2Former 以掩码注意力统一全景/实例/语义分割
 
 - [2021](2021.md) — **Vision Transformer 主导 · CLIP 开创视觉-语言新范式 · 自监督觉醒**
-  ViT 以纯 Transformer 颠覆 CNN 在视觉中的绝对主导地位，Swin Transformer 引入移位窗口成为通用视觉骨干，CLIP 通过 4 亿图文对对比学习开启零样本视觉识别时代，DINO 自监督 ViT 涌现场景布局与物体边界信息，DeiT 通过知识蒸馏使 ViT 训练民主化，Score SDE 将得分匹配与扩散统一为连续 SDE 框架，MLP-Mixer 证明纯 MLP 也能做视觉识别
+  ViT 以纯 Transformer 颠覆 CNN 在视觉中的绝对主导地位，Swin Transformer 引入移位窗口成为通用视觉骨干，CLIP 通过 4 亿图文对对比学习开启零样本视觉识别时代，Deformable DETR 以多尺度可变形注意力解决 DETR 收敛慢的问题为后续 DINO 系列奠基，DINO 自监督 ViT 涌现场景布局与物体边界信息，DeiT 通过知识蒸馏使 ViT 训练民主化，Score SDE 将得分匹配与扩散统一为连续 SDE 框架，MLP-Mixer 证明纯 MLP 也能做视觉识别
 
 - [2020](2020.md) — **DETR 终结手工检测组件 · 扩散模型实用化 · NeRF 开启神经渲染 · 对比学习兴起**
   DETR 以端到端 Transformer 消除锚框和 NMS 等手工设计组件，DDPM 证明扩散模型可达 GAN 级图像质量开启生成新范式，NeRF 以连续神经辐射场实现逼真新视角合成，SimCLR/BYOL 分别建立对比与非对比自监督学习范式，EfficientDet 以 BiFPN 和复合缩放实现检测效率最优
