@@ -117,13 +117,33 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
-- [2026](2026.md)
-- [2025](2025.md)
-- [2024](2024.md)
-- [2023](2023.md)
-- [2022](2022.md)
-- [2021](2021.md)
-- [2020](2020.md)
-- [2019](2019.md)
-- [2018](2018.md)
-- [2017](2017.md)
+
+- [2026](2026.md) — **多模态基座模型与新架构融合**
+  多模态时序基座模型兴起（Aurora 融合文本/图像上下文），SSM 向多尺度演进（ms-Mamba），LLM 语义知识与时序模式的深度对齐（SE-LLM），Transformer 在嵌入层和非规则序列上持续增强（EMAformer, APN），视觉模型蒸馏进入时序领域（OccamVTS）
+
+- [2025](2025.md) — **基座模型规模化 · 扩散模型复兴 · MoE 与极简主义**
+  时序基座模型达到万亿级预训练规模（Sundial: 1T 时间点，Time-MoE: 2.4B 参数），MoE 稀疏专家带来效率突破（Moirai-MoE, Moirai 2.0），扩散模型在概率预测中全面回归（ARMD, NsDiff, CNDiff, K²VAE），极简模型挑战复杂架构（TimeBase: <0.4k 参数），检索增强（TS-RAG）和通用分析（TimeMixer++）拓宽应用边界，频域与小波方法持续演化（WPMixer, TimeFilter）
+
+- [2024](2024.md) — **基座模型元年 · 反转设计 · Mamba 入场 · 频域滤波**
+  时序基座模型集中爆发（TimesFM, Timer, MOIRAI, Chronos, MOMENT, UniTS），LLM 重编程用于时序（Time-LLM, AutoTimes），iTransformer 反转注意力维度成为新范式，Mamba/SSM 正式进入时序预测（S-Mamba, TimeMachine, MambaTS），频域方法分化出滤波（FilterNet）和周期建模（CycleNet）两条路线，极简 MLP 持续进化（SparseTSF, SOFTS），归一化（SAN）和外生变量（TimeXer）等子方向继续深入
+
+- [2023](2023.md) — **MLP vs Transformer 之争 · Patching 范式 · LLM 跨界**
+  DLinear 以简单线性层挑战 Transformer 引发范式论战，PatchTST 确立 Patching 为时序 Transformer 核心设计，MLP 方法全面开花（N-HiTS, TiDE, TSMixer, Koopa），TimesNet 将 1D 序列转为 2D 张量开辟 CNN 新路径，LLM 首次跨界时序（GPT4TS, LLMTime），ClimaX 开启气象基座模型先河，频域（FreTS）和归一化（Dish-TS）形成独立子方向，SegRNN 证明 RNN 在长期预测中仍有竞争力
+
+- [2022](2022.md) — **归一化革命 · 频域方法 · SSM 奠基 · 表征学习**
+  RevIN 提出可逆归一化解决分布偏移问题并被后续模型广泛采用，Non-stationary Transformers 从注意力层面建模非平稳性，频域方法兴起（FEDformer 将频域注意力与分解结合，FiLM 用 Legendre 多项式处理频域），S4 奠定结构化状态空间模型基础为后续 Mamba 铺路，TS2Vec/CoST 开拓时序对比表征学习，Transformer 变体持续涌现（ETSformer, Pyraformer, Triformer）
+
+- [2021](2021.md) — **高效 Transformer 主导 · 分解范式 · 扩散模型起步**
+  Informer（AAAI 最佳论文）以 ProbSparse 注意力开启长序列预测新时代，Autoformer 提出自相关分解机制确立分解范式，TFT 融合 LSTM 与注意力实现可解释多步预测，TimeGrad/CSDI 将扩散模型首次引入时序概率预测，GTS 探索图结构学习用于多变量预测
+
+- [2020](2020.md) — **GNN 多变量建模 · 可解释 MLP · 概率预测**
+  N-BEATS 以纯全连接网络实现可解释预测成为 MLP 方向奠基之作，DeepAR 确立自回归概率预测范式，StemGNN/MTGNN 将图神经网络引入多变量时序建模，Transformer 开始在时序领域初步探索（AST, Deep Transformer）
+
+- [2019](2019.md) — **Transformer 初入时序 · 损失函数创新**
+  LogTrans 是最早将 Transformer 应用于时序预测的工作之一（LogSparse 设计），DILATE 提出形状与时间扭曲联合损失改善预测质量，DeepGLO 结合全局矩阵分解与局部时序网络处理高维序列
+
+- [2018](2018.md) — **早期神经网络方法 · TCN 确立**
+  LSTNet 结合 CNN 捕捉局部模式和 RNN 建模长期依赖，TCN 论文系统性证明时序卷积网络优于 RNN，为后续 CNN 方向奠基
+
+- [2017](2017.md) — **统计方法的工程化**
+  Prophet 将模块化可加回归模型（趋势+季节性+节假日）工程化，成为业务时序预测的广泛采用基线
