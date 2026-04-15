@@ -21,15 +21,26 @@ graph TD
     BLIP2 --> LLaVA["LLaVA (2023)"]:::vlm
     LLaVA --> LLaVA15["LLaVA-1.5 (2023)"]:::vlm
     LLaVA15 --> LLaVANeXT["LLaVA-NeXT (2024)"]:::vlm
+    LLaVANeXT --> LLaVAOneVision["LLaVA-OneVision (2025)"]:::vlm
     CLIP --> ImageBind["ImageBind (2023)"]:::unified
     CLIP -.-> InternVL["InternVL (2024)"]:::vlm
+    InternVL --> InternVL3["InternVL 2.5/3 (2025)"]:::vlm
 
     ImageBind -.-> OneLLM["OneLLM (2024)"]:::unified
     ImageBind -.-> UnifiedIO2["Unified-IO 2 (2024)"]:::unified
     ImageBind -.-> NExTGPT["NExT-GPT (2024)"]:::unified
+    NExTGPT -.-> Janus["Janus (2025)"]:::unified
+    Janus --> JanusPro["Janus-Pro (2025)"]:::unified
+    NExTGPT -.-> ShowO["Show-o (2025)"]:::unified
+    NExTGPT -.-> Transfusion["Transfusion (2025)"]:::unified
 
     LLaVANeXT --> LLaVAVideo["LLaVA-Video (2024)"]:::video
     LLaVA -.-> VideoLLaMA["Video-LLaMA (2023)"]:::video
+    LLaVAVideo -.-> VITA15["VITA-1.5 (2025)"]:::video
+
+    LLaVA15 -.-> Qwen2VL["Qwen2-VL (2025)"]:::vlm
+    Qwen2VL --> Qwen25VL["Qwen2.5-VL (2025)"]:::vlm
+    LLaVA15 -.-> DeepSeekVL2["DeepSeek-VL2 (2025)"]:::vlm
 ```
 
 ### Paradigm Guide
@@ -46,6 +57,7 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
+- [2025](2025.md)
 - [2024](2024.md)
 - [2023](2023.md)
 - [2022](2022.md)

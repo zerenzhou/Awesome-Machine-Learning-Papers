@@ -35,11 +35,19 @@ graph TD
     OneForAll --> GraphAny["GraphAny (2024)"]:::pretrain
     PRODIGY -.-> ULTRA["ULTRA (2024)"]:::pretrain
 
+    OneForAll --> GOFA["GOFA (2025)"]:::llm
+    OneForAll -.-> RAG4GFM["RAG4GFM (2025)"]:::pretrain
+    GraphAny -.-> RAG4GFM
+
     VGAE --> DiGress["DiGress (2023)"]:::gen
+    DiGress --> LayerDAG["LayerDAG (2025)"]:::gen
+    DiGress --> DeFoG["DeFoG (2025)"]:::gen
 
     GAT -.-> GraphGPT["GraphGPT (2023)"]:::llm
     GraphGPT --> LLaGA["LLaGA (2024)"]:::llm
     GraphGPT --> InstructGraph["InstructGraph (2024)"]:::llm
+    LLaGA -.-> GOFA
+    RAG4GFM --> GFMRAG["GFM-RAG (2025)"]:::llm
 ```
 
 ### Paradigm Guide
@@ -58,6 +66,8 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
+- [2026](2026.md)
+- [2025](2025.md)
 - [2024](2024.md)
 - [2023](2023.md)
 - [2020](2020.md)

@@ -21,15 +21,24 @@ graph TD
     WaveNet["⭐ WaveNet (2016)"]:::star --> DiffWave["DiffWave (2021)"]:::tts
     WaveNet --> Voicebox["Voicebox (2023)"]:::tts
     DiffWave -.-> NatSpeech2["NaturalSpeech 2 (2023)"]:::tts
+    NatSpeech2 --> NatSpeech3["NaturalSpeech 3 (2024)"]:::tts
     Voicebox --> CosyVoice["CosyVoice (2024)"]:::tts
     Voicebox --> F5TTS["F5-TTS (2024)"]:::tts
+    CosyVoice --> CosyVoice2["CosyVoice 2 (2025)"]:::tts
 
     VALLE["VALL-E (2023)"]:::codec --> SpeechTokenizer["SpeechTokenizer (2024)"]:::codec
     VALLE --> WavTokenizer["WavTokenizer (2024)"]:::codec
+    VALLE --> VALLE2["VALL-E 2 (2024)"]:::codec
+    VALLE --> MaskGCT["MaskGCT (2025)"]:::codec
+    VALLE -.-> SparkTTS["Spark-TTS (2025)"]:::tts
 
     Whisper -.-> SALMONN["SALMONN (2024)"]:::llm
     Whisper -.-> QwenAudio["Qwen-Audio (2024)"]:::llm
+    QwenAudio --> Qwen2Audio["Qwen2-Audio (2024)"]:::llm
+    Qwen2Audio --> Qwen25Omni["Qwen2.5-Omni (2025)"]:::llm
     wav2vec -.-> AudioPaLM["AudioPaLM (2023)"]:::llm
+    AudioPaLM -.-> StepAudio["Step-Audio (2025)"]:::llm
+    AudioPaLM -.-> GLM4Voice["GLM-4-Voice (2024)"]:::llm
 
     WaveNet -.-> MusicLM["MusicLM (2023)"]:::music
     MusicLM --> MusicGen["MusicGen (2023)"]:::music
@@ -49,6 +58,7 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
+- [2025](2025.md)
 - [2024](2024.md)
 - [2023](2023.md)
 - [2021](2021.md)

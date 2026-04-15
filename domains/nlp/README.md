@@ -56,6 +56,8 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
+- [2026](2026.md)
+- [2025](2025.md)
 - [2024](2024.md)
 - [2023](2023.md)
 - [2020](2020.md)
