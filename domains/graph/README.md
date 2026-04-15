@@ -12,6 +12,7 @@ graph TD
     classDef trans fill:#E9D5FF,stroke:#7C3AED
     classDef pretrain fill:#FECDD3,stroke:#E11D48
     classDef gen fill:#FEF08A,stroke:#CA8A04
+    classDef llm fill:#E0E7FF,stroke:#4F46E5
     classDef star fill:#FFD700,stroke:#B8860B
 
     GCN["⭐ GCN (2017)"]:::star --> VGAE["VGAE (2016)"]:::gen
@@ -24,6 +25,21 @@ graph TD
     GraphSAGE --> PretrainGNN
 
     GIN -.-> MPNN["MPNN Framework (2017)"]:::theory
+
+    GTN --> GPS["GPS (2023)"]:::trans
+    GPS --> Exphormer["Exphormer (2023)"]:::trans
+
+    PretrainGNN --> GraphMAE2["GraphMAE2 (2023)"]:::pretrain
+    PretrainGNN --> PRODIGY["PRODIGY (2023)"]:::pretrain
+    PRODIGY --> OneForAll["One for All (2024)"]:::pretrain
+    OneForAll --> GraphAny["GraphAny (2024)"]:::pretrain
+    PRODIGY -.-> ULTRA["ULTRA (2024)"]:::pretrain
+
+    VGAE --> DiGress["DiGress (2023)"]:::gen
+
+    GAT -.-> GraphGPT["GraphGPT (2023)"]:::llm
+    GraphGPT --> LLaGA["LLaGA (2024)"]:::llm
+    GraphGPT --> InstructGraph["InstructGraph (2024)"]:::llm
 ```
 
 ### Paradigm Guide
@@ -33,9 +49,10 @@ graph TD
 | ![Spectral Methods](https://img.shields.io/badge/Spectral_Methods-DBEAFE?style=flat-square) | Graph convolutions defined in the spectral domain via graph Fourier transforms |
 | ![Spatial Methods](https://img.shields.io/badge/Spatial_Methods-D1FAE5?style=flat-square) | Message-passing approaches that aggregate neighbor features directly in graph space |
 | ![Expressiveness & Theory](https://img.shields.io/badge/Expressiveness_%26_Theory-FED7AA?style=flat-square) | Theoretical analysis of GNN expressiveness, connections to Weisfeiler-Lehman tests |
-| ![Graph Transformer](https://img.shields.io/badge/Graph_Transformer-E9D5FF?style=flat-square) | Attention-based architectures adapted for graph-structured data |
-| ![Pre-training](https://img.shields.io/badge/Pre--training-FECDD3?style=flat-square) | Self-supervised strategies for learning transferable graph representations |
-| ![Generative](https://img.shields.io/badge/Generative-FEF08A?style=flat-square) | Variational and generative models for graph structure generation |
+| ![Graph Transformer](https://img.shields.io/badge/Graph_Transformer-E9D5FF?style=flat-square) | Attention-based architectures adapted for graph-structured data, from local+global (GPS) to sparse (Exphormer) |
+| ![Pre-training & Foundation](https://img.shields.io/badge/Pre--training_%26_Foundation-FECDD3?style=flat-square) | Self-supervised and foundation model strategies for transferable graph representations across diverse domains |
+| ![Generative](https://img.shields.io/badge/Generative-FEF08A?style=flat-square) | Variational and diffusion-based generative models for graph structure generation |
+| ![LLM + Graph](https://img.shields.io/badge/LLM_%2B_Graph-E0E7FF?style=flat-square) | Methods integrating large language models with GNNs for text-based graph reasoning and instruction following |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Contents
