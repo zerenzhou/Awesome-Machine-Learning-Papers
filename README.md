@@ -17,6 +17,7 @@ A curated collection of classic and recent machine learning papers from top venu
 | [Speech & Audio](domains/speech/) | Speech recognition, synthesis, audio understanding |
 | [Graph Learning](domains/graph/) | Node classification, link prediction, graph generation |
 | [Multimodal Learning](domains/multimodal/) | Vision-language, cross-modal retrieval |
+| [Signal Processing](domains/signal-processing/) | Algorithm unrolling, communications, radar, biomedical signals, compressed sensing |
 
 ## Technique Directions
 
