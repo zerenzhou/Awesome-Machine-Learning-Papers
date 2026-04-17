@@ -1,58 +1,32 @@
 # Radar & Remote Sensing Signals
 
-Deep learning for SAR automatic target recognition, remote-sensing scene classification, direction-of-arrival estimation, and multi-modal (optical + SAR + multispectral) foundation models. Papers are listed in reverse chronological order; ⭐ marks pioneering works.
+Deep learning for SAR automatic target recognition, remote-sensing scene classification, direction-of-arrival estimation, and multi-modal (optical + SAR + multispectral) foundation models.
 
-## 2025
+## Tech Tree
 
-- **SARATR-X: Toward Building A Foundation Model for SAR Target Recognition** — IEEE TIP 2025 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2405.09365)] [[Code](https://github.com/waterdisappear/SARATR-X)]
-  First foundation model for SAR ATR trained on 0.18M unlabelled SAR samples via self-supervised learning with multi-scale gradient features, matching supervised methods in few-shot settings.
+```mermaid
+graph TD
+    classDef radar fill:#FED7AA,stroke:#EA580C
+    classDef fm fill:#E0E7FF,stroke:#4F46E5
+    classDef star fill:#FFD700,stroke:#B8860B
 
-## 2024
+    SAR["⭐ SAR-ATR CNN (2016)"]:::star --> RESISC45["NWPU-RESISC45 (2017)"]:::radar
+    SAR --> DeepMUSIC["DeepMUSIC (2020)"]:::radar
+    RESISC45 --> RadarSurvey["Radar DL Survey (2021)"]:::radar
+    RESISC45 -.-> SatMAE["SatMAE (2022)"]:::fm
+    SatMAE --> RingMo["RingMo (2023)"]:::fm
+    SatMAE --> SpectralGPT["SpectralGPT (2024)"]:::fm
+    SatMAE --> SkySense["SkySense (2024)"]:::fm
+    SAR -.-> SARATRX["SARATR-X (2025)"]:::fm
+```
 
-- **SpectralGPT: Spectral Remote Sensing Foundation Model** — IEEE TPAMI 2024 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2311.07113)] [[Code](https://github.com/danfenghong/IEEE_TPAMI_SpectralGPT)]
-  First foundation model for spectral remote sensing using a 3D generative pre-trained transformer on 1M+ spectral images with progressive training across varying resolutions and regions.
+### Paradigm Guide
 
-- **SkySense: A Multi-Modal Remote Sensing Foundation Model Towards Universal Interpretation for Earth Observation Imagery** — CVPR 2024 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2312.10115)] [[Code](https://github.com/Jack-bo1220/SkySense)]
-  Largest multi-modal RS foundation model pre-trained on 21.5M temporal sequences of optical and SAR data, surpassing 18 prior RSFMs across 16 datasets and 7 tasks.
-
-## 2023
-
-- **RingMo: A Remote Sensing Foundation Model with Masked Image Modeling** — IEEE TGRS 2023 [`Foundation Model`]
-  [[Paper](https://ieeexplore.ieee.org/document/10105625)]
-  Built a 2M-image RS pre-training dataset with density-aware masking, achieving SOTA on 8 benchmarks across scene classification, detection, segmentation, and change detection.
-
-## 2022
-
-- **SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery** — NeurIPS 2022 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2207.08051)] [[Code](https://github.com/sustainlab-group/SatMAE)]
-  Adapted masked autoencoder pre-training to multi-spectral and temporal satellite imagery with spectral positional encodings, improving downstream RS tasks by up to 14%.
-
-## 2021
-
-- **Deep-Learning for Radar: A Survey** — IEEE Access 2021
-  [[Paper](https://ieeexplore.ieee.org/document/9568916)]
-  Comprehensive survey covering deep learning for radar waveform design, LPI recognition, SAR/HRRP-based automatic target recognition, and jamming/clutter suppression.
-
-## 2020
-
-- **DeepMUSIC: Multiple Signal Classification via Deep Learning** — IEEE Sensors Letters 2020
-  [[Paper](https://arxiv.org/abs/1912.04357)]
-  Designed multiple CNNs each dedicated to angular subregions for multi-source DOA estimation, achieving superior accuracy and lower complexity than both classical and DL-based methods.
-
-## 2017
-
-- **Remote Sensing Image Scene Classification: Benchmark and State of the Art** — Proceedings of the IEEE 2017
-  [[Paper](https://arxiv.org/abs/1703.00121)]
-  Introduced the NWPU-RESISC45 benchmark (31,500 images, 45 scene classes) and provided comprehensive evaluation of deep learning methods for remote sensing scene classification.
-
-## 2016
-
-- ⭐ **Target Classification Using the Deep Convolutional Networks for SAR Images** — IEEE TGRS 2016
-  [[Paper](https://ieeexplore.ieee.org/document/7460942)]
-  Proposed all-convolutional networks (A-ConvNets) without fully connected layers for SAR automatic target recognition on the MSTAR dataset, addressing overfitting from limited training data.
+| Paradigm | Description |
+|:---|:---|
+| ![Radar & Remote Sensing](https://img.shields.io/badge/Radar_%26_Remote_Sensing-FED7AA?style=flat-square) | CNNs and supervised models for SAR automatic target recognition, remote-sensing scene classification, and DOA estimation |
+| ![Foundation Models](https://img.shields.io/badge/Foundation_Models-E0E7FF?style=flat-square) | Large-scale pre-trained models for remote-sensing imagery (optical + SAR + multispectral) enabling transfer and few-shot generalization |
+| ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Benchmark Datasets
 
@@ -60,10 +34,22 @@ Deep learning for SAR automatic target recognition, remote-sensing scene classif
 |:---|:---|:---|:---|
 | **MSTAR** | SAR | 10 vehicle classes, ~6k chips | X-band SAR target recognition benchmark (SOC / EOC) |
 | **OpenSARShip / FUSAR-Ship** | SAR | ship types | Sentinel-1 / Gaofen-3 SAR ship classification |
-| **UC Merced Land Use** | Optical | 21 classes × 100 | Early remote sensing scene classification benchmark |
+| **UC Merced Land Use** | Optical | 21 classes × 100 | Early remote-sensing scene classification benchmark |
 | **AID** | Optical | 30 classes × ~300 | Aerial-image scene classification |
 | **NWPU-RESISC45** | Optical | 45 classes × 700 | Standard remote-sensing scene classification benchmark |
 | **DOTA / DOTA-v2.0** | Aerial | 18 object classes | Oriented object detection in aerial imagery |
-| **BigEarthNet-S1/S2** | SAR + Multispectral | 590k patches, 43 labels | Sentinel-1/2 multi-label land-cover benchmark for remote-sensing foundation models |
+| **BigEarthNet-S1/S2** | SAR + Multispectral | 590k patches, 43 labels | Sentinel-1/2 multi-label land-cover benchmark for RSFMs |
 | **SEN1-2 / SEN12MS** | SAR + Optical | 180k / 541k | Paired Sentinel-1/2 dataset for multimodal remote sensing |
 | **fMoW / xView / iSAID** | High-res aerial | 1M / 1M / 655k objects | Functional map, general detection, and instance segmentation benchmarks |
+
+## Contents
+
+- [Classic Papers](classic.md) — Foundational and pioneering works
+- [2025](2025.md) — SARATR-X SAR foundation model
+- [2024](2024.md) — SpectralGPT · SkySense multimodal RS foundation models
+- [2023](2023.md) — RingMo RS foundation model
+- [2022](2022.md) — SatMAE multispectral pre-training
+- [2021](2021.md) — Radar deep learning survey
+- [2020](2020.md) — DeepMUSIC DOA estimation
+- [2017](2017.md) — NWPU-RESISC45 benchmark
+- [2016](2016.md) — ⭐ SAR-ATR all-convolutional networks

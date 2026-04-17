@@ -1,70 +1,34 @@
 # Image & Video Signal Processing
 
-Deep learning for image/video reconstruction and inverse problems — compressive sensing image recovery, MRI/CT reconstruction, and diffusion-based solvers for general noisy inverse problems. This subdomain overlaps substantially with computer vision but is included because its methodology (sampling operators, forward models, iterative solvers) is fundamentally signal-processing. Papers are listed in reverse chronological order; ⭐ marks pioneering works.
+Deep learning for image/video reconstruction and inverse problems — compressive sensing image recovery, MRI/CT reconstruction, and diffusion-based solvers for general noisy inverse problems. This subdomain overlaps with computer vision but is included because its methodology (sampling operators, forward models, iterative solvers) is fundamentally signal-processing.
 
-## 2025
+## Tech Tree
 
-- **Diffusion State-Guided Projected Gradient for Inverse Problems** — ICLR 2025 [`Diffusion`]
-  [[Paper](https://arxiv.org/abs/2410.03463)] [[Code](https://github.com/Anima-Lab/DiffStateGrad)]
-  Projects measurement guidance gradients onto a low-rank subspace from intermediate diffusion states, acting as a plug-in for existing diffusion-based inverse solvers with improved robustness.
+```mermaid
+graph TD
+    classDef cs fill:#FECDD3,stroke:#E11D48
+    classDef unroll fill:#DBEAFE,stroke:#2563EB
+    classDef star fill:#FFD700,stroke:#B8860B
 
-- **Invertible Diffusion Models for Compressed Sensing** — IEEE TPAMI 2025 [`Diffusion`]
-  [[Paper](https://arxiv.org/abs/2403.17006)]
-  Repurposed the diffusion sampling process as an end-to-end CS reconstruction model via a two-level invertible design, reducing GPU memory by up to 93.8% during training.
+    ADMMNet["ADMM-Net (2016)"]:::unroll --> ISTANet["ISTA-Net (2018)"]:::unroll
+    CSGen["⭐ CS Generative (2017)"]:::star --> LDAMP["Learned D-AMP (2017)"]:::cs
+    CSGen --> DeepInverse["DeepInverse (2017)"]:::cs
+    CSGen --> DeepCS["Deep CS (2019)"]:::cs
+    CSGen -.-> ScoreIP["Score-Based IP (2022)"]:::cs
+    ScoreIP --> DPS["DPS (2023)"]:::cs
+    ScoreIP --> AmbientDiff["Ambient Diffusion (2023)"]:::cs
+    DPS --> ReSample["ReSample (2024)"]:::cs
+    DPS --> DiffStateGrad["DiffStateGrad (2025)"]:::cs
+    DeepCS -.-> IDM["IDM (2025)"]:::cs
+```
 
-## 2024
+### Paradigm Guide
 
-- **Solving Inverse Problems with Latent Diffusion Models via Hard Data Consistency** — ICLR 2024 Spotlight [`Diffusion`]
-  [[Paper](https://arxiv.org/abs/2307.08123)] [[Code](https://github.com/soominkwon/resample)]
-  Proposed ReSample, solving general inverse problems using pre-trained latent diffusion models by incorporating hard data consistency with a resampling scheme to maintain the noisy data manifold.
-
-## 2023
-
-- **Diffusion Posterior Sampling for General Noisy Inverse Problems** — ICLR 2023 Spotlight [`Diffusion`]
-  [[Paper](https://arxiv.org/abs/2209.14687)] [[Code](https://github.com/DPS2022/diffusion-posterior-sampling)]
-  Extended diffusion-based solvers to handle general noisy and nonlinear inverse problems by approximating the posterior score via a tractable likelihood term — a field standard.
-
-- **Ambient Diffusion: Learning Clean Distributions from Corrupted Data** — NeurIPS 2023 [`Diffusion`]
-  [[Paper](https://arxiv.org/abs/2305.19256)] [[Code](https://github.com/giannisdaras/ambient-diffusion)]
-  First diffusion framework that learns clean data distributions from only corrupted/incomplete observations, enabling compressed sensing recovery without clean training data.
-
-## 2022
-
-- **Solving Inverse Problems in Medical Imaging with Score-Based Generative Models** — ICLR 2022
-  [[Paper](https://arxiv.org/abs/2111.08005)] [[Code](https://github.com/yang-song/score_inverse_problems)]
-  Used score-based generative models as learned priors to solve CT and MRI inverse problems without task-specific training, matching or exceeding supervised baselines.
-
-## 2019
-
-- **Deep Compressed Sensing** — ICML 2019
-  [[Paper](https://arxiv.org/abs/1905.06723)]
-  Proposed a framework jointly training generators and reconstruction via meta-learning, simultaneously optimizing measurement and recovery for compressed sensing.
-
-## 2018
-
-- **ISTA-Net: Interpretable Optimization-Inspired Deep Network for Image Compressive Sensing** — CVPR 2018 [`Algorithm Unrolling`]
-  [[Paper](https://openaccess.thecvf.com/content_cvpr_2018/html/Zhang_ISTA-Net_Interpretable_Optimization-Inspired_CVPR_2018_paper.html)] [[Code](https://github.com/jianzhangcs/ISTA-Net-PyTorch)]
-  Unrolled ISTA into a deep network with learned nonlinear transforms for proximal mapping, achieving fast and interpretable compressive sensing image reconstruction.
-
-## 2017
-
-- ⭐ **Compressed Sensing using Generative Models** — ICML 2017
-  [[Paper](https://arxiv.org/abs/1703.03208)] [[Code](https://github.com/AshishBora/csgm)]
-  Replaced sparsity assumptions with generative model priors for compressed sensing, achieving accurate reconstruction with 5-10x fewer measurements than Lasso.
-
-- **Learned D-AMP: Principled Neural Network based Compressive Image Recovery** — NeurIPS 2017
-  [[Paper](https://arxiv.org/abs/1704.06625)] [[Code](https://github.com/ricedsp/D-AMP_Toolbox)]
-  Designed a neural network mimicking denoising-based approximate message passing for compressive image recovery, running 50x faster than BM3D-AMP.
-
-- **Learning to Invert: Signal Recovery via Deep Convolutional Networks** — ICASSP 2017
-  [[Paper](https://arxiv.org/abs/1701.03891)]
-  Proposed DeepInverse, a deep convolutional network that directly learns the inverse mapping from compressive measurements to signals without iterative optimization.
-
-## 2016
-
-- **Deep ADMM-Net for Compressive Sensing MRI** — NeurIPS 2016 [`Algorithm Unrolling`]
-  [[Paper](https://papers.nips.cc/paper/6406-deep-admm-net-for-compressive-sensing-mri)] [[Code](https://github.com/yangyan92/Deep-ADMM-Net)]
-  Unrolled the ADMM optimization algorithm into a deep network with learnable transforms and shrinkage functions for MRI reconstruction, achieving fast and accurate CS recovery.
+| Paradigm | Description |
+|:---|:---|
+| ![Compressed Sensing & Inverse Problems](https://img.shields.io/badge/CS_%26_Inverse_Problems-FECDD3?style=flat-square) | Learned measurement and reconstruction for compressive sensing and inverse problems, from generative priors to diffusion-based solvers |
+| ![Algorithm Unrolling](https://img.shields.io/badge/Algorithm_Unrolling-DBEAFE?style=flat-square) | Deep networks derived by unrolling iterative optimization algorithms (ISTA, ADMM) for image reconstruction |
+| ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Benchmark Datasets
 
@@ -75,3 +39,15 @@ Deep learning for image/video reconstruction and inverse problems — compressiv
 | **Calgary-Campinas / SKM-TEA** | MRI reconstruction | Multi-coil brain / knee MRI benchmarks |
 | **Mayo Low-Dose CT** | CT reconstruction | AAPM Low-Dose CT Grand Challenge data |
 | **FFHQ / ImageNet validation** | Diffusion inverse problems | Used by DPS, ReSample, IDM, DiffStateGrad |
+
+## Contents
+
+- [Classic Papers](classic.md) — Foundational and pioneering works
+- [2025](2025.md) — DiffStateGrad · IDM invertible diffusion CS
+- [2024](2024.md) — ReSample latent-diffusion inverse solver
+- [2023](2023.md) — DPS · Ambient Diffusion
+- [2022](2022.md) — Score-based inverse problems for medical imaging
+- [2019](2019.md) — Deep Compressed Sensing (meta-learning)
+- [2018](2018.md) — ISTA-Net unrolled image CS
+- [2017](2017.md) — ⭐ CS Generative · Learned D-AMP · DeepInverse
+- [2016](2016.md) — Deep ADMM-Net for CS MRI

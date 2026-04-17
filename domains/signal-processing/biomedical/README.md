@@ -1,56 +1,31 @@
 # Biomedical Signals
 
-Deep learning for physiological signal decoding: EEG-based brain-computer interfaces, ECG arrhythmia classification, wearable biosignals (PPG), and large-scale biosignal foundation models. Papers are listed in reverse chronological order; ⭐ marks pioneering works.
+Deep learning for physiological signal decoding: EEG-based brain-computer interfaces, ECG arrhythmia classification, wearable biosignals (PPG), and large-scale biosignal foundation models.
 
-## 2025
+## Tech Tree
 
-- **NeuroLM: A Universal Multi-task Foundation Model for Bridging the Gap between Language and EEG Signals** — ICLR 2025 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2409.00101)] [[Code](https://github.com/935963004/NeuroLM)]
-  First multi-task EEG foundation model treating EEG as a foreign language for LLMs, with the 1.7B-parameter NeuroLM-XL pre-trained on ~25,000 hours of EEG achieving SOTA across six BCI tasks.
+```mermaid
+graph TD
+    classDef bio fill:#E9D5FF,stroke:#7C3AED
+    classDef fm fill:#E0E7FF,stroke:#4F46E5
+    classDef star fill:#FFD700,stroke:#B8860B
 
-- **CBraMod: A Criss-Cross Brain Foundation Model for EEG Decoding** — ICLR 2025 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2412.07236)] [[Code](https://github.com/wjq-learning/CBraMod)]
-  Proposed a criss-cross transformer separately modeling spatial and temporal EEG dependencies, pre-trained via patch-based masked reconstruction, achieving SOTA across 10 BCI tasks on 12 datasets.
+    EEGDecode["EEG Decoding (2017)"]:::bio --> EEGNet["⭐ EEGNet (2018)"]:::star
+    ECG["ECG Nature Med (2019)"]:::bio --> ECG12Lead["12-Lead ECG DNN (2020)"]:::bio
+    EEGNet -.-> BrainBERT["BrainBERT (2023)"]:::fm
+    BrainBERT --> LaBraM["LaBraM (2024)"]:::fm
+    LaBraM --> NeuroLM["NeuroLM (2025)"]:::fm
+    LaBraM --> CBraMod["CBraMod (2025)"]:::fm
+    ECG12Lead -.-> WearableFM["Wearable FM (2024)"]:::fm
+```
 
-## 2024
+### Paradigm Guide
 
-- **Large Brain Model for Learning Generic Representations with Tremendous EEG Data in BCI** — ICLR 2024 Spotlight [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2405.18765)] [[Code](https://github.com/935963004/LaBraM)]
-  First large-scale EEG foundation model (LaBraM) pre-trained on ~2,500 hours of EEG from ~20 datasets via vector-quantized neural spectrum prediction, achieving SOTA across diverse BCI tasks.
-
-- **Large-scale Training of Foundation Models for Wearable Biosignals** — ICLR 2024 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2312.05409)]
-  First foundation model for PPG and ECG biosignals pre-trained via self-supervised contrastive learning on 141K participants, demonstrating strong transfer to cardiovascular and activity tasks.
-
-## 2023
-
-- **BrainBERT: Self-supervised Representation Learning for Intracranial Recordings** — ICLR 2023 [`Foundation Model`]
-  [[Paper](https://arxiv.org/abs/2302.14367)] [[Code](https://github.com/czlwang/BrainBERT)]
-  Applied BERT-style masked pre-training to intracranial EEG spectrograms, producing reusable representations that generalize across subjects and reduce labeled data requirements by up to 85%.
-
-## 2020
-
-- **Automatic Diagnosis of the 12-Lead ECG Using a Deep Neural Network** — Nature Communications 2020
-  [[Paper](https://arxiv.org/abs/1904.01949)] [[Code](https://github.com/antonior92/automatic-ecg-diagnosis)]
-  Trained a DNN on over 2 million 12-lead ECGs to diagnose 6 cardiac abnormalities, outperforming cardiology residents with F1 scores above 80% and specificity over 99%.
-
-## 2019
-
-- **Cardiologist-Level Arrhythmia Detection and Classification in Ambulatory Electrocardiograms Using a Deep Neural Network** — Nature Medicine 2019
-  [[Paper](https://www.nature.com/articles/s41591-018-0268-3)] [[Code](https://github.com/awni/ecg)]
-  Validated that a 34-layer CNN trained on 91,232 single-lead ECGs from 53,549 patients exceeds average cardiologist performance (F1: 0.837 vs. 0.780) in 12-class arrhythmia detection.
-
-## 2018
-
-- ⭐ **EEGNet: A Compact Convolutional Neural Network for EEG-Based Brain-Computer Interfaces** — Journal of Neural Engineering 2018
-  [[Paper](https://arxiv.org/abs/1611.08024)] [[Code](https://github.com/vlawhern/arl-eegmodels)]
-  Introduced a compact CNN using depthwise and separable convolutions for EEG-based BCI, generalizing across P300, ERN, MRCP, and SMR paradigms with an order of magnitude fewer parameters — the standard compact model for EEG-BCI.
-
-## 2017
-
-- **Deep Learning with Convolutional Neural Networks for EEG Decoding and Visualization** — Human Brain Mapping 2017
-  [[Paper](https://arxiv.org/abs/1703.05051)] [[Code](https://github.com/braindecode/braindecode)]
-  Showed that deep ConvNets with batch normalization and cropped training match or exceed FBCSP for EEG decoding, with novel visualization of learned spectral-spatial features.
+| Paradigm | Description |
+|:---|:---|
+| ![Biomedical Signal Processing](https://img.shields.io/badge/Biomedical_Signal-E9D5FF?style=flat-square) | Deep learning for EEG-based brain-computer interfaces, ECG arrhythmia classification, and physiological signal decoding |
+| ![Foundation Models](https://img.shields.io/badge/Foundation_Models-E0E7FF?style=flat-square) | Large-scale pre-trained models for EEG/ECG biosignals enabling transfer learning and few-shot generalization |
+| ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Benchmark Datasets
 
@@ -65,3 +40,14 @@ Deep learning for physiological signal decoding: EEG-based brain-computer interf
 | **CPSC2018** | 12-lead ECG | 6,877 records | Chinese Physiological Signal Challenge; standard clinical ECG benchmark |
 | **PTB-XL** | 12-lead ECG | 21,837 records | Large public clinical ECG dataset for supervised learning |
 | **MIMIC-III / MIMIC-IV (waveforms)** | Multi-signal | 50k+ patients | ICU physiological signals for multi-task biosignal foundation models |
+
+## Contents
+
+- [Classic Papers](classic.md) — Foundational and pioneering works
+- [2025](2025.md) — NeuroLM · CBraMod large EEG foundation models
+- [2024](2024.md) — LaBraM · Wearable biosignal foundation models
+- [2023](2023.md) — BrainBERT intracranial EEG pre-training
+- [2020](2020.md) — 12-lead ECG DNN clinical validation
+- [2019](2019.md) — Cardiologist-level ECG arrhythmia detection
+- [2018](2018.md) — ⭐ EEGNet compact CNN for BCI
+- [2017](2017.md) — Braindecode deep EEG decoding
