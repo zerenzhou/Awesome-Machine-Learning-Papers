@@ -114,6 +114,57 @@ graph TD
 | ![Representation Learning](https://img.shields.io/badge/Representation_Learning-DDD6FE?style=flat-square) | Self-supervised and contrastive methods learning universal time series representations for downstream tasks |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
+## Benchmark Datasets
+
+Most TSF papers evaluate on a common set of public datasets covering energy, transportation, weather, health, and finance. The canonical long-sequence forecasting suite below is available through the [Autoformer repo](https://github.com/thuml/Autoformer) and is reused by nearly every Transformer / MLP paper since 2021.
+
+### Long-Sequence Forecasting (LTSF) Suite
+
+| Dataset | Domain | Variates | Frequency | Length | Description |
+|:---|:---|:---|:---|:---|:---|
+| **ETT** (ETTh1/h2, ETTm1/m2) | Energy | 7 | 1h / 15min | 17.4k / 69.7k | Electricity transformer temperature from two Chinese stations (2016–2018); introduced by Informer and the de facto LTSF benchmark |
+| **Electricity (ECL)** | Energy | 321 | 1h | 26.3k | Hourly electricity consumption of 321 clients (UCI, 2012–2014) |
+| **Traffic** | Transportation | 862 | 1h | 17.5k | SF Bay Area road occupancy rates from 862 sensors (2015–2016) |
+| **Weather** | Meteorology | 21 | 10min | 52.7k | 21 meteorological indicators from the Max Planck Institute for Biogeochemistry (2020) |
+| **ILI** | Health | 7 | 1week | 966 | Weekly influenza-like illness ratios reported by the US CDC (2002–2020) |
+| **Exchange** | Finance | 8 | 1day | 7.6k | Daily exchange rates of 8 countries (1990–2016), introduced by LSTNet |
+| **Solar-Energy** | Energy | 137 | 10min | 52.6k | Photovoltaic power production of 137 plants in Alabama (2006), introduced by LSTNet |
+
+### Spatio-Temporal / GNN Benchmarks
+
+Used by multivariate TSF methods that model sensor-level graph structure.
+
+| Dataset | Domain | Nodes | Frequency | Description |
+|:---|:---|:---|:---|:---|
+| **PEMS03 / 04 / 07 / 08** | Transportation | 358 / 307 / 883 / 170 | 5min | California highway flow/speed/occupancy from Caltrans PeMS; standard for STGNN methods |
+| **METR-LA** | Transportation | 207 | 5min | Loop-detector speed data from LA County highways (DCRNN benchmark) |
+| **PEMS-BAY** | Transportation | 325 | 5min | Bay Area traffic-speed sensors; companion to METR-LA |
+
+### Classical Forecasting Competitions
+
+Widely used for univariate and hierarchical evaluation, especially by statistical baselines and probabilistic methods.
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **M3** | 3,003 series | Makridakis competition benchmark spanning yearly/quarterly/monthly/other frequencies |
+| **M4** | 100,000 series | Yearly to hourly series from finance, demographics, industry; standard univariate benchmark |
+| **M5** | 42,840 series | Hierarchical Walmart sales with intermittent demand; tests hierarchical probabilistic forecasting |
+| **Tourism** | 1,311 series | Australian and international tourism demand; hierarchical reconciliation benchmark |
+
+### Unified Benchmarks & Foundation-Model Pretraining Corpora
+
+With the rise of time series foundation models (2024+), pretraining corpora have grown from millions to trillions of time points.
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **Monash TSF Archive** | 58 datasets | Unified benchmark for classical and deep forecasting, with standardized splits and metrics |
+| **LOTSA** | 27B obs., 9 domains | Large-scale Open Time Series Archive; pretraining corpus for **MOIRAI** |
+| **UTSD** | 1B time points, 7 domains | Unified Time Series Dataset; pretraining corpus for **Timer** |
+| **Chronos corpus** | 84B tokens | Real datasets + synthetic TSMixup / KernelSynth series; pretraining corpus for **Chronos** |
+| **Time-300B** | 300B time points | Mixed public + proprietary corpus; pretraining corpus for **Time-MoE** |
+| **GIFT-Eval** | 24 datasets, 144k series | Zero-shot / few-shot evaluation suite for time series foundation models (ServiceNow, 2024) |
+| **BasicTS+** | 40+ datasets | Fair comparison framework for STGNN and long-term forecasting methods |
+
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
