@@ -126,6 +126,73 @@ graph TD
 | ![3D Vision](https://img.shields.io/badge/3D_Vision-FEF08A?style=flat-square) | Neural rendering and 3D reconstruction methods, from NeRF to 3D Gaussian Splatting and feed-forward geometry estimation (VGGT) |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
+## Benchmark Datasets
+
+### Image Classification
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **MNIST** | 70k / 28×28 / 10 classes | Handwritten digit classification; the original LeNet benchmark |
+| **CIFAR-10 / CIFAR-100** | 60k / 32×32 / 10 or 100 classes | Small-image classification; default sandbox for new architectures |
+| **ImageNet-1K** | 1.28M train / 1000 classes | The canonical large-scale classification benchmark (ILSVRC 2012) |
+| **ImageNet-21K** | 14M / 21,841 classes | Full WordNet hierarchy; standard for large-scale pretraining |
+| **JFT-300M / JFT-3B** | 300M / 3B | Google's internal web-scale classification corpus used for ViT/BiT |
+| **ImageNet-V2 / -A / -R / -Sketch** | 10k–30k each | OOD robustness test sets for ImageNet-trained models |
+
+### Detection & Segmentation
+
+| Dataset | Task | Scale | Description |
+|:---|:---|:---|:---|
+| **PASCAL VOC 2007/2012** | Detection, segmentation | 20 classes, 11k / 23k images | Historical detection benchmark; still used for ablation |
+| **MS COCO** | Detection, segmentation, captioning | 80 classes, 330k images, 2.5M instances | The universal object detection and instance segmentation benchmark |
+| **LVIS** | Long-tail detection/segmentation | 1203 classes, 164k images | Long-tail distribution companion to COCO |
+| **Open Images V7** | Open-vocabulary detection | 600 classes, 9M images | Google's large-scale detection dataset with verified labels |
+| **Objects365** | Detection | 365 classes, 2M images | Large-vocabulary detection used to pretrain DINO-det / Co-DETR |
+| **ADE20K** | Semantic/panoptic segmentation | 150 classes, 25k images | Scene parsing benchmark |
+| **Cityscapes** | Urban segmentation | 19 classes, 5k fine + 20k coarse | Autonomous-driving segmentation benchmark |
+| **SA-1B** | Promptable segmentation | 11M images, 1.1B masks | SAM's training corpus; largest segmentation dataset released |
+
+### Generative Models
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **CelebA / CelebA-HQ** | 200k / 30k (1024²) | Celebrity face attributes; standard face-GAN benchmark |
+| **FFHQ** | 70k 1024² | High-quality faces curated for StyleGAN |
+| **LSUN (Bedroom/Church/…)** | ~1M per category | Scene-level generative benchmarks |
+| **CC3M / CC12M** | 3M / 12M | Conceptual Captions image-text pairs |
+| **LAION-400M / LAION-5B** | 400M / 5.85B | Web-crawled image-text pairs; pretraining corpus for OpenCLIP, Stable Diffusion |
+| **DataComp / DataComp-1B** | 12.8B candidate / 1.4B filtered | Benchmark for data curation in CLIP training |
+
+### 3D / Neural Rendering
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **ShapeNet** | 51k 3D models, 55 categories | Canonical CAD-model dataset for 3D generation and single-view reconstruction |
+| **Objaverse / Objaverse-XL** | 800k / 10M 3D assets | Large-scale 3D corpus for Gaussian/NeRF-based generation |
+| **NeRF-Synthetic (Blender)** | 8 synthetic scenes | Original NeRF evaluation set |
+| **Mip-NeRF 360** | 9 real-world scenes | Unbounded-scene benchmark for novel-view synthesis |
+| **Tanks and Temples** | 21 scenes | Real-world MVS/NeRF benchmark with training and intermediate splits |
+| **ScanNet / Replica / Matterport3D** | indoor scenes | RGB-D reconstruction and scene understanding benchmarks |
+
+### Video Understanding
+
+| Dataset | Task | Scale | Description |
+|:---|:---|:---|:---|
+| **Kinetics-400 / 600 / 700** | Action recognition | 240k–650k clips | Universal video classification benchmark |
+| **Something-Something V2** | Temporal reasoning | 220k clips, 174 classes | Emphasizes temporal order over appearance |
+| **AVA** | Spatio-temporal action detection | 430 videos, 1.58M labels | Localized action annotation on movies |
+| **Charades / Charades-Ego** | Daily activity recognition | 10k videos | Multi-label daily activity benchmark |
+| **Ego4D** | Egocentric video | 3,670 hours | Largest egocentric dataset with multi-task benchmarks |
+| **WebVid-10M / Panda-70M / HD-VG-130M** | Text-video pretraining | 10M–130M clips | Pretraining corpora for text-to-video and video LLMs |
+
+### Depth & Geometry
+
+| Dataset | Domain | Description |
+|:---|:---|:---|
+| **KITTI** | Autonomous driving | Stereo / depth / flow / odometry benchmark |
+| **NYU Depth V2** | Indoor RGB-D | Standard indoor monocular depth benchmark |
+| **MegaDepth / DIODE / ETH3D** | Mixed | Multi-source depth evaluation sets used by Depth Anything |
+
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works

@@ -84,6 +84,64 @@ graph TD
 | ![Neural Operators](https://img.shields.io/badge/Neural_Operators-CCFBF1?style=flat-square) | Learning mappings between function spaces (Fourier Neural Operator and extensions) for fast PDE solving and physics-informed signal processing |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
+## Benchmark Datasets
+
+### Wireless Communications
+
+| Dataset | Task | Scale | Description |
+|:---|:---|:---|:---|
+| **RadioML 2016.10a / 10b** | Modulation recognition | 220k / 1.2M samples, 11 classes | GNU Radio synthetic RF signals over varying SNR; DeepSig benchmark |
+| **RadioML 2018.01a** | Modulation recognition | 2.56M samples, 24 classes | Over-the-air captures plus synthetic channels |
+| **CSI Dataset (COST2100)** | CSI feedback | — | Standard channel for CsiNet-family evaluation |
+| **DeepMIMO** | MIMO / beam prediction | Ray-tracing | Parametrized mmWave and massive-MIMO channel dataset |
+| **ViWi / Raymobtime** | V2X / beam selection | Multi-modal | Vision-aided / ray-traced channel datasets |
+
+### Radar & Remote Sensing
+
+| Dataset | Modality | Classes / Scale | Description |
+|:---|:---|:---|:---|
+| **MSTAR** | SAR | 10 vehicle classes, ~6k chips | X-band SAR target recognition benchmark (SOC / EOC) |
+| **OpenSARShip / FUSAR-Ship** | SAR | ship types | Sentinel-1 / Gaofen-3 SAR ship classification |
+| **UC Merced Land Use** | Optical | 21 classes × 100 | Early remote sensing scene classification benchmark |
+| **AID** | Optical | 30 classes × ~300 | Aerial-image scene classification |
+| **NWPU-RESISC45** | Optical | 45 classes × 700 | Standard remote-sensing scene classification benchmark |
+| **DOTA / DOTA-v2.0** | Aerial | 18 object classes | Oriented object detection in aerial imagery |
+| **BigEarthNet-S1/S2** | SAR + Multispectral | 590k patches, 43 labels | Sentinel-1/2 multi-label land-cover benchmark for remote-sensing foundation models |
+| **SEN1-2 / SEN12MS** | SAR + Optical | 180k / 541k | Paired Sentinel-1/2 dataset for multimodal remote sensing |
+| **fMoW / xView / iSAID** | High-res aerial | 1M / 1M / 655k objects | Functional map, general detection, and instance segmentation benchmarks |
+
+### Biomedical Signals (EEG / ECG)
+
+| Dataset | Modality | Scale | Description |
+|:---|:---|:---|:---|
+| **BCI Competition IV (2a/2b)** | EEG | 9 subjects | Motor-imagery BCI benchmark; EEGNet evaluation |
+| **PhysioNet MI** | EEG | 109 subjects | EEG Motor Movement/Imagery Dataset |
+| **TUH EEG Corpus (TUEG)** | EEG | 30k+ recordings, 69k patients | Largest open clinical EEG corpus; pretraining corpus for LaBraM/CBraMod |
+| **SEED / SEED-IV / DEAP** | EEG | — | Emotion recognition benchmarks |
+| **MIT-BIH Arrhythmia** | ECG | 48 records | Classic ECG arrhythmia benchmark |
+| **PhysioNet Challenge 2017 / 2020 / 2021** | ECG | 8k–88k records | Atrial fibrillation / 12-lead diagnosis challenges |
+| **CPSC2018** | 12-lead ECG | 6,877 records | Chinese Physiological Signal Challenge; standard clinical ECG benchmark |
+| **PTB-XL** | 12-lead ECG | 21,837 records | Large public clinical ECG dataset for supervised learning |
+| **MIMIC-III / MIMIC-IV (waveforms)** | Multi-signal | 50k+ patients | ICU physiological signals for multi-task biosignal foundation models |
+
+### Compressed Sensing / Inverse Problems
+
+| Dataset | Task | Description |
+|:---|:---|:---|
+| **Set11 / BSD68 / Urban100** | CS image reconstruction | Natural-image benchmarks reused for CS evaluation |
+| **fastMRI** | MRI reconstruction | 1,500+ knee / brain MRI volumes; standard undersampled reconstruction benchmark |
+| **Calgary-Campinas / SKM-TEA** | MRI reconstruction | Multi-coil brain / knee MRI benchmarks |
+| **Mayo Low-Dose CT** | CT reconstruction | AAPM Low-Dose CT Grand Challenge data |
+| **FFHQ / ImageNet validation** | Diffusion inverse problems | Used by DPS, ReSample, IDM, DiffStateGrad |
+
+### Neural Operators / PDE
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **FNO Benchmark Suite** | Burgers / Darcy / Navier-Stokes | Canonical PDE benchmarks from the Fourier Neural Operator paper |
+| **PDEBench** | 11 PDE families | Comprehensive benchmark for scientific ML / neural operators |
+| **The Well** | 15 datasets, 15TB | Large-scale physics simulation corpus for training foundation PDE models |
+
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works

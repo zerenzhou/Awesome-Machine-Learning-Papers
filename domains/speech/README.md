@@ -76,6 +76,61 @@ graph TD
 | ![Music Generation](https://img.shields.io/badge/Music_Generation-FECDD3?style=flat-square) | Models synthesizing music from text descriptions or audio prompts via generative modeling, with emerging acceleration techniques (Presto!) |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
+## Benchmark Datasets
+
+### Speech Recognition (ASR)
+
+| Dataset | Language | Hours | Description |
+|:---|:---|:---|:---|
+| **LibriSpeech** | English | 1,000 | Read audiobook speech; the de facto ASR benchmark (LibriVox derived) |
+| **Libri-Light** | English | 60,000 | Unlabeled audiobook corpus for self-supervised pretraining |
+| **TED-LIUM 3** | English | 452 | TED-talk speech with transcripts |
+| **GigaSpeech** | English | 10,000 | Multi-domain (audiobooks / podcasts / YouTube) ASR corpus |
+| **Common Voice** | 100+ languages | 20,000+ | Mozilla's crowd-sourced multilingual ASR corpus |
+| **VoxPopuli** | 23 EU languages | 400k unlabeled + 1.8k labeled | European Parliament recordings |
+| **AISHELL-1 / -2 / -3 / -4** | Mandarin | 170–1000 | Standard Mandarin ASR / multi-talker benchmarks |
+| **WenetSpeech** | Mandarin | 10,000+ | Large-scale multi-domain Mandarin corpus |
+| **FLEURS** | 102 languages | 1,400 | Multilingual low-resource ASR / S2ST evaluation |
+
+### Speech Synthesis (TTS)
+
+| Dataset | Speakers | Hours | Description |
+|:---|:---|:---|:---|
+| **LJSpeech** | 1 | 24 | Female single-speaker read-aloud; Tacotron / WaveNet baseline |
+| **VCTK** | 110 | 44 | Multi-speaker accented English; standard for multi-speaker TTS |
+| **LibriTTS / LibriTTS-R** | 2,456 | 585 | Multi-speaker TTS corpus derived from LibriSpeech |
+| **AISHELL-3** | 218 | 85 | Multi-speaker Mandarin TTS |
+| **Emilia / Emilia-Large** | 219k / >1M | 101k / 216k | Largest multilingual open TTS corpus (2024–2025) |
+| **GigaSpeech TTS** | — | 10,000 | Multi-domain TTS data derived from GigaSpeech |
+| **MLS (Multilingual LibriSpeech)** | 8 languages | 50,000 | Multilingual read speech for zero-shot / multilingual TTS |
+
+### Audio Understanding & Tagging
+
+| Dataset | Classes | Scale | Description |
+|:---|:---|:---|:---|
+| **AudioSet** | 527 | 2M YouTube clips | Weakly labeled audio event ontology; pretrain for BEATs, AST |
+| **FSD50K** | 200 | 51k clips | Strongly labeled Freesound audio-event dataset |
+| **ESC-50 / UrbanSound8K** | 50 / 10 | 2k / 8k | Small-scale environmental sound classification |
+| **VGGSound** | 309 | 200k clips | Audio-visual video dataset with class labels |
+| **SpeechCommands** | 35 | 105k | Keyword-spotting benchmark (1-second utterances) |
+
+### Music
+
+| Dataset | Scale | Description |
+|:---|:---|:---|
+| **MusicCaps** | 5,521 clips | Curated music-text caption pairs (MusicLM/MusicGen evaluation) |
+| **MTG-Jamendo** | 55k tracks | Multi-label music tagging over 195 tags |
+| **MillionSongDataset (MSD)** | 1M tracks | Metadata and features for large-scale music retrieval |
+| **Slakh2100 / MUSDB18** | 2,100 / 150 tracks | Source separation benchmarks |
+
+### Audio LM / Benchmarks
+
+| Dataset | Purpose | Description |
+|:---|:---|:---|
+| **SUPERB / SUPERB-SG** | ASR / Speaker / Emotion etc. | Universal speech representation evaluation benchmark |
+| **AIR-Bench / AudioBench / Dynamic-SUPERB** | Audio LLM eval | Unified benchmarks for audio-language model instruction following |
+| **LibriSpeech-Mix / WSJ0-2mix** | Source separation | Synthetic mixtures for speaker separation research |
+
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
