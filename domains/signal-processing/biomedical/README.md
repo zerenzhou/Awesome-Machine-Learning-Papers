@@ -9,6 +9,7 @@ graph TD
     classDef bio fill:#E9D5FF,stroke:#7C3AED
     classDef fm fill:#E0E7FF,stroke:#4F46E5
     classDef star fill:#FFD700,stroke:#B8860B
+    classDef bench fill:#FEF3C7,stroke:#D97706
 
     EEGDecode["EEG Decoding (2017)"]:::bio --> EEGNet["⭐ EEGNet (2018)"]:::star
 
@@ -28,14 +29,31 @@ graph TD
     EEGConformer -.-> EEGPT["EEGPT (2024)"]:::fm
     LaBraM --> NeuroLM["NeuroLM (2025)"]:::fm
     LaBraM --> CBraMod["CBraMod (2025)"]:::fm
+    LaBraM --> REVE["REVE (2025)"]:::fm
+    LaBraM --> ALFEE["ALFEE (2025)"]:::fm
+    LaBraM --> NeurIPT["NeurIPT (2025)"]:::fm
+
+    %% Cross-modality — EEG+MEG
+    LaBraM -.-> BrainOmni["BrainOmni EEG+MEG (2025)"]:::fm
+
+    %% Speech BCI — non-invasive MEG
+    BrainOmni -.-> LibriBrain["LibriBrain MEG speech (2025)"]:::bio
 
     %% ECG
     ECG["ECG Nature Med (2019)"]:::bio --> ECG12Lead["12-Lead ECG DNN (2020)"]:::bio
     ECG --> PTBXL["PTB-XL Benchmark (2020)"]:::bio
     PTBXL --> ECGFM["ECG-FM (2024)"]:::fm
+    ECGFM --> ECGFounder["ECGFounder 10M (2025)"]:::fm
 
     %% Wearable
     ECG12Lead -.-> WearableFM["Wearable FM (2024)"]:::fm
+    WearableFM --> NormWear["NormWear (2024)"]:::fm
+    WearableFM --> PulsePPG["Pulse-PPG (2025)"]:::fm
+
+    %% Benchmarking / critical evaluation
+    NeuroLM -.-> EEGFMBench["EEG-FM Benchmark (2026)"]:::bench
+    CBraMod -.-> EEGFMBench
+    REVE -.-> EEGFMBench
 ```
 
 ### Paradigm Guide
@@ -45,6 +63,7 @@ graph TD
 | ![Biomedical Signal Processing](https://img.shields.io/badge/Biomedical_Signal-E9D5FF?style=flat-square) | Deep learning for EEG-based brain-computer interfaces, ECG arrhythmia classification, and physiological signal decoding |
 | ![Foundation Models](https://img.shields.io/badge/Foundation_Models-E0E7FF?style=flat-square) | Large-scale pre-trained models for EEG/ECG biosignals enabling transfer learning and few-shot generalization |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
+| ![Benchmark](https://img.shields.io/badge/Benchmark-FEF3C7?style=flat-square) | Evaluation frameworks and critical comparisons of existing methods |
 
 ## Benchmark Datasets
 
@@ -107,6 +126,7 @@ Cleanest benchmark progression — all three methods are foundation-model entrie
 |:---|:---|:---|:---|:---|:---|
 | PTB-XL (superclass, multi-label) | Macro-AUC | xResNet1d101 (Strodthoff baseline) | ~0.93 | 2020 | [arXiv:2004.13701](https://arxiv.org/abs/2004.13701) |
 | PTB-XL (superclass, multi-label) | Macro-AUC | HuBERT-ECG / ECG-FM | ~0.94 (tight cluster) | 2024 | [ECG-FM arXiv:2408.05178](https://arxiv.org/abs/2408.05178) |
+| Harvard–Emory ECG DB (80 diagnoses) | AUROC | ECGFounder (10M ECGs) | >0.95 across 80 dx | 2025 | [NEJM AI](https://ai.nejm.org/doi/full/10.1056/AIoa2401033) |
 | PhysioNet/CinC 2020 (12-lead, multi-label) | Challenge metric | Prna / Natarajan et al. (winner) | ~0.533 on hidden test | 2020 | [CinC 2020](https://physionet.org/content/challenge-2020/) |
 | PhysioNet/CinC 2021 (12-lead, multi-label) | Challenge metric | ISIBrno-AIMT (winner) | ~0.57 on hidden test | 2021 | [CinC 2021](https://moody-challenge.physionet.org/2021/) |
 | MIT-BIH Arrhythmia (AAMI 5-class, inter-patient) | Accuracy | Mousavi & Afghah / Transformer-based | ~93–95% | 2019–24 | [arXiv:1812.07421](https://arxiv.org/abs/1812.07421) |
@@ -123,8 +143,9 @@ Cleanest benchmark progression — all three methods are foundation-model entrie
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
-- [2025](2025.md) — NeuroLM · CBraMod large EEG foundation models
-- [2024](2024.md) — LaBraM · Wearable FM · EEGPT · ECG-FM
+- [2026](2026.md) — Critical benchmark evaluation of EEG foundation models
+- [2025](2025.md) — NeuroLM · CBraMod · BrainOmni · NeurIPT · REVE · ALFEE · ECGFounder · Pulse-PPG · LibriBrain
+- [2024](2024.md) — LaBraM · Wearable FM · EEGPT · ECG-FM · NormWear
 - [2023](2023.md) — BrainBERT · EEG Conformer · BIOT
 - [2022](2022.md) — ATCNet MI-BCI · XSleepNet sleep staging
 - [2021](2021.md) — AttnSleep attention sleep staging
