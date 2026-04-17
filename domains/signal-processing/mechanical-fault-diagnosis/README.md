@@ -38,6 +38,11 @@ graph TD
     BearLLM --> PHMLM["PHM-LM Outline (2025)"]:::fm
     RmGPT --> PHMLM
     FDLLM --> PHMLM
+
+    %% 2026 — LLM-PHM wave continuation
+    BearLLM --> BearGen["BearGen LLM-generator (2026)"]:::fm
+    RmGPT --> LoRM["LoRM next-token FM (2026)"]:::fm
+    FDLLM --> LMMFD["LMM-FD multimodal KG (2026)"]:::fm
 ```
 
 ### Paradigm Guide
@@ -82,6 +87,7 @@ graph TD
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
+- [2026](2026.md) — BearGen LLM-generator · LoRM next-token FM · LMM-FD multimodal KG · TDA small-sample bearing
 - [2025](2025.md) — DWCN-SDGFD single-source DG · PHM-LM outline
 - [2024](2024.md) — ClassBD physics-informed · BearLLM · RmGPT · FD-LLM (LLM/FM wave)
 - [2023](2023.md) — EWSNet physics-informed · DCFN causal DG · FaultFormer SSL-transformer
