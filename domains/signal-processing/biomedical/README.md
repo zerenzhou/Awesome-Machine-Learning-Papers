@@ -11,11 +11,30 @@ graph TD
     classDef star fill:#FFD700,stroke:#B8860B
 
     EEGDecode["EEG Decoding (2017)"]:::bio --> EEGNet["⭐ EEGNet (2018)"]:::star
-    ECG["ECG Nature Med (2019)"]:::bio --> ECG12Lead["12-Lead ECG DNN (2020)"]:::bio
+
+    %% EEG — Motor Imagery BCI
+    EEGNet --> ATCNet["ATCNet (2022)"]:::bio
+    ATCNet --> EEGConformer["EEG Conformer (2023)"]:::bio
+
+    %% EEG — Sleep Staging
+    EEGNet -.-> AttnSleep["AttnSleep (2021)"]:::bio
+    AttnSleep --> XSleepNet["XSleepNet (2022)"]:::bio
+
+    %% EEG — Foundation Models
     EEGNet -.-> BrainBERT["BrainBERT (2023)"]:::fm
+    EEGNet -.-> BIOT["BIOT (2023)"]:::fm
     BrainBERT --> LaBraM["LaBraM (2024)"]:::fm
+    BIOT --> LaBraM
+    EEGConformer -.-> EEGPT["EEGPT (2024)"]:::fm
     LaBraM --> NeuroLM["NeuroLM (2025)"]:::fm
     LaBraM --> CBraMod["CBraMod (2025)"]:::fm
+
+    %% ECG
+    ECG["ECG Nature Med (2019)"]:::bio --> ECG12Lead["12-Lead ECG DNN (2020)"]:::bio
+    ECG --> PTBXL["PTB-XL Benchmark (2020)"]:::bio
+    PTBXL --> ECGFM["ECG-FM (2024)"]:::fm
+
+    %% Wearable
     ECG12Lead -.-> WearableFM["Wearable FM (2024)"]:::fm
 ```
 
@@ -105,9 +124,11 @@ Cleanest benchmark progression — all three methods are foundation-model entrie
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
 - [2025](2025.md) — NeuroLM · CBraMod large EEG foundation models
-- [2024](2024.md) — LaBraM · Wearable biosignal foundation models
-- [2023](2023.md) — BrainBERT intracranial EEG pre-training
-- [2020](2020.md) — 12-lead ECG DNN clinical validation
+- [2024](2024.md) — LaBraM · Wearable FM · EEGPT · ECG-FM
+- [2023](2023.md) — BrainBERT · EEG Conformer · BIOT
+- [2022](2022.md) — ATCNet MI-BCI · XSleepNet sleep staging
+- [2021](2021.md) — AttnSleep attention sleep staging
+- [2020](2020.md) — 12-lead ECG DNN · PTB-XL benchmark
 - [2019](2019.md) — Cardiologist-level ECG arrhythmia detection
 - [2018](2018.md) — ⭐ EEGNet compact CNN for BCI
 - [2017](2017.md) — Braindecode deep EEG decoding
