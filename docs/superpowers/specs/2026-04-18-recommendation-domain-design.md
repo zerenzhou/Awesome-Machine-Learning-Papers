@@ -119,8 +119,8 @@ Papers within a year are grouped by sub-branch where useful, otherwise listed fl
 
 Each `classic.md` captures foundational pre-2016 works for that paradigm. Examples:
 
-- `cf-mf/classic.md`: Item-based CF (2001), SVD++ (2008), BPR (2009), FM (2010), FFM (2016)
-- `sequential-rec/classic.md`: FPMC (2010), GRU4Rec (2016)
+- `cf-mf/classic.md`: Item-based CF (2001), Netflix Prize SVD (2007), SVD++ (2008), BPR (2009), FM (2010), eALS (2014)
+- `sequential-rec/classic.md`: Markov Chain recommenders, FPMC (2010), HRM (2015)
 - `rl-rec/classic.md`: contextual bandits for recommendation (LinUCB 2010, Thompson sampling)
 
 If a paradigm has no meaningful pre-2016 work (e.g., LLM4Rec, Generative-Rec), `classic.md` lists the 2-3 seminal papers that launched the paradigm instead, or is omitted with a note in the sub-README.
