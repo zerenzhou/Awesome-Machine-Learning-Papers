@@ -20,6 +20,7 @@ graph TD
     SimGCL --> XSimGCL["XSimGCL (2024)"]:::contrastive
     SimGCL --> LightGCL["LightGCL (2023)"]:::contrastive
     KGAT["KGAT (2019)"]:::kg --> KGIN["KGIN (2021)"]:::kg
+    LightGCN --> HCCF["HCCF (2022)"]:::hypergraph
 ```
 
 ### Paradigm Legend

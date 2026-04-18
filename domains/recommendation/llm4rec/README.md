@@ -19,6 +19,8 @@ graph TD
     P5 --> E4SRec["E4SRec (2023)"]:::embedding
     ChatGPTRec["ChatGPT-as-Rec (2023)"]:::zero_shot -.-> TALLRec
     LLaRA --> ReLLa["ReLLa (2024)"]:::instruction_tune
+    P5 --> RecGPT["RecGPT (2023)"]:::unified_prompt
+    M6Rec["M6-Rec (2022)"]:::unified_prompt -.-> RecGPT
 ```
 
 ### Paradigm Legend
