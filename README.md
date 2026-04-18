@@ -18,6 +18,7 @@ A curated collection of classic and recent machine learning papers from top venu
 | [Graph Learning](domains/graph/) | Node classification, link prediction, graph generation |
 | [Multimodal Learning](domains/multimodal/) | Vision-language, cross-modal retrieval |
 | [Signal Processing](domains/signal-processing/) | Algorithm unrolling, communications, radar, biomedical signals, compressed sensing |
+| [Recommendation Systems](domains/recommendation/) | Collaborative filtering, CTR prediction, sequential/session/graph/LLM-based/generative recommendation |
 
 ## Technique Directions
 

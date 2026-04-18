@@ -59,6 +59,7 @@ graph TD
 - Classic/flagship papers get `⭐` prefix and the `star` class
 - Dashed arrows `-.->` denote loose influence, solid arrows `-->` denote direct lineage
 - 8-color palette max per diagram; reuse colors for semantic groupings
+- **Reserved keywords** — NEVER use `graph`, `flowchart`, `sequenceDiagram`, `gantt`, `end`, or `subgraph` as `classDef` names (parser conflict). Use `gnn` instead of `graph`, `seq` instead of `sequenceDiagram`, etc.
 
 ### Commit Style
 
@@ -106,7 +107,7 @@ graph TD
     classDef ctr fill:#FED7AA,stroke:#EA580C
     classDef seq fill:#E9D5FF,stroke:#7C3AED
     classDef session fill:#FCE7F3,stroke:#DB2777
-    classDef graph fill:#FECDD3,stroke:#E11D48
+    classDef gnn fill:#FECDD3,stroke:#E11D48
     classDef llm fill:#E0E7FF,stroke:#4F46E5
     classDef gen fill:#FEF08A,stroke:#CA8A04
     classDef debias fill:#CCFBF1,stroke:#0D9488
@@ -123,10 +124,10 @@ graph TD
 
     BPR --> NCF["NCF (2017)"]:::deep
     NCF --> LightGCN["⭐ LightGCN (2020)"]:::star
-    NCF --> NGCF["NGCF (2019)"]:::graph
+    NCF --> NGCF["NGCF (2019)"]:::gnn
     NGCF --> LightGCN
-    LightGCN --> SimGCL["SimGCL (2022)"]:::graph
-    LightGCN --> XSimGCL["XSimGCL (2024)"]:::graph
+    LightGCN --> SimGCL["SimGCL (2022)"]:::gnn
+    LightGCN --> XSimGCL["XSimGCL (2024)"]:::gnn
 
     DeepFM --> DIN["⭐ DIN (2018)"]:::star
     DIN --> DIEN["DIEN (2019)"]:::ctr
