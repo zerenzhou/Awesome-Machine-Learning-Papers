@@ -16,6 +16,7 @@ graph TD
     classDef fm fill:#E0E7FF,stroke:#4F46E5
     classDef prob fill:#E5E7EB,stroke:#4B5563
     classDef repr fill:#DDD6FE,stroke:#7C3AED
+    classDef nop fill:#BAE6FD,stroke:#0284C7
     classDef star fill:#FFD700,stroke:#B8860B
 
     LogTrans["LogTrans (2019)"]:::trans --> Informer["⭐ Informer (2021)"]:::star
@@ -95,6 +96,12 @@ graph TD
 
     TS2Vec["TS2Vec (2022)"]:::repr --> CoST["CoST (2022)"]:::repr
 
+    DeepONet["DeepONet (2021)"]:::nop --> LOCA["LOCA (2022)"]:::nop
+    FNO["FNO (2021)"]:::nop --> LOCA
+    FNO -.-> NOFramework["Neural Operator (2023)"]:::nop
+    LOCA --> KRNO["KRNO (2025)"]:::nop
+    NOFramework --> KRNO
+
     Linear -.->|"challenges"| Informer
     RevIN -.-> PatchTST
 ```
@@ -113,6 +120,7 @@ graph TD
 | ![Foundation Models & LLM](https://img.shields.io/badge/Foundation_Models_%26_LLM-E0E7FF?style=flat-square) | Large-scale pretrained models for zero-shot or few-shot forecasting, including LLM reprogramming and time series foundation models |
 | ![Probabilistic](https://img.shields.io/badge/Probabilistic-E5E7EB?style=flat-square) | Distributional forecasting via diffusion (ARMD, NsDiff), VAE (K²VAE), or autoregressive likelihood, capturing uncertainty beyond point estimates |
 | ![Representation Learning](https://img.shields.io/badge/Representation_Learning-DDD6FE?style=flat-square) | Self-supervised and contrastive methods learning universal time series representations for downstream tasks |
+| ![Neural Operator](https://img.shields.io/badge/Neural_Operator-BAE6FD?style=flat-square) | Operator-theoretic models learning mappings between function spaces (FNO, DeepONet, LOCA, KRNO), enabling discretization-invariant forecasting, super-resolution, and natural handling of irregularly sampled data |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Benchmark Datasets
@@ -173,8 +181,8 @@ With the rise of time series foundation models (2024+), pretraining corpora have
 - [2026](2026.md) — **多模态基座模型与新架构融合**
   多模态时序基座模型兴起（Aurora 融合文本/图像上下文），SSM 向多尺度演进（ms-Mamba），LLM 语义知识与时序模式的深度对齐（SE-LLM），Transformer 在嵌入层和非规则序列上持续增强（EMAformer, APN），视觉模型蒸馏进入时序领域（OccamVTS）
 
-- [2025](2025.md) — **基座模型规模化 · 扩散模型复兴 · MoE 与极简主义**
-  时序基座模型达到万亿级预训练规模（Sundial: 1T 时间点，Time-MoE: 2.4B 参数），MoE 稀疏专家带来效率突破（Moirai-MoE, Moirai 2.0），扩散模型在概率预测中全面回归（ARMD, NsDiff, CNDiff, K²VAE），极简模型挑战复杂架构（TimeBase: <0.4k 参数），检索增强（TS-RAG）和通用分析（TimeMixer++）拓宽应用边界，频域与小波方法持续演化（WPMixer, TimeFilter）
+- [2025](2025.md) — **基座模型规模化 · 扩散模型复兴 · MoE 与极简主义 · 神经算子成熟**
+  时序基座模型达到万亿级预训练规模（Sundial: 1T 时间点，Time-MoE: 2.4B 参数），MoE 稀疏专家带来效率突破（Moirai-MoE, Moirai 2.0），扩散模型在概率预测中全面回归（ARMD, NsDiff, CNDiff, K²VAE），极简模型挑战复杂架构（TimeBase: <0.4k 参数），检索增强（TS-RAG）和通用分析（TimeMixer++）拓宽应用边界，频域与小波方法持续演化（WPMixer, TimeFilter），KRNO 用 Khatri-Rao 核分解实现非平稳神经算子的近线性扩展
 
 - [2024](2024.md) — **基座模型元年 · 反转设计 · Mamba 入场 · 频域滤波**
   时序基座模型集中爆发（TimesFM, Timer, MOIRAI, Chronos, MOMENT, UniTS），LLM 重编程用于时序（Time-LLM, AutoTimes），iTransformer 反转注意力维度成为新范式，Mamba/SSM 正式进入时序预测（S-Mamba, TimeMachine, MambaTS），频域方法分化出滤波（FilterNet）和周期建模（CycleNet）两条路线，极简 MLP 持续进化（SparseTSF, SOFTS），归一化（SAN）和外生变量（TimeXer）等子方向继续深入
@@ -182,11 +190,11 @@ With the rise of time series foundation models (2024+), pretraining corpora have
 - [2023](2023.md) — **MLP vs Transformer 之争 · Patching 范式 · LLM 跨界**
   DLinear 以简单线性层挑战 Transformer 引发范式论战，PatchTST 确立 Patching 为时序 Transformer 核心设计，MLP 方法全面开花（N-HiTS, TiDE, TSMixer, Koopa），TimesNet 将 1D 序列转为 2D 张量开辟 CNN 新路径，LLM 首次跨界时序（GPT4TS, LLMTime），ClimaX 开启气象基座模型先河，频域（FreTS）和归一化（Dish-TS）形成独立子方向，SegRNN 证明 RNN 在长期预测中仍有竞争力
 
-- [2022](2022.md) — **归一化革命 · 频域方法 · SSM 奠基 · 表征学习**
-  RevIN 提出可逆归一化解决分布偏移问题并被后续模型广泛采用，Non-stationary Transformers 从注意力层面建模非平稳性，频域方法兴起（FEDformer 将频域注意力与分解结合，FiLM 用 Legendre 多项式处理频域），S4 奠定结构化状态空间模型基础为后续 Mamba 铺路，TS2Vec/CoST 开拓时序对比表征学习，Transformer 变体持续涌现（ETSformer, Pyraformer, Triformer）
+- [2022](2022.md) — **归一化革命 · 频域方法 · SSM 奠基 · 表征学习 · 神经算子入时序**
+  RevIN 提出可逆归一化解决分布偏移问题并被后续模型广泛采用，Non-stationary Transformers 从注意力层面建模非平稳性，频域方法兴起（FEDformer 将频域注意力与分解结合，FiLM 用 Legendre 多项式处理频域），S4 奠定结构化状态空间模型基础为后续 Mamba 铺路，TS2Vec/CoST 开拓时序对比表征学习，LOCA 将 coupled attention 引入算子学习并首次在气候预测上评测
 
-- [2021](2021.md) — **高效 Transformer 主导 · 分解范式 · 扩散模型起步**
-  Informer（AAAI 最佳论文）以 ProbSparse 注意力开启长序列预测新时代，Autoformer 提出自相关分解机制确立分解范式，TFT 融合 LSTM 与注意力实现可解释多步预测，TimeGrad/CSDI 将扩散模型首次引入时序概率预测，GTS 探索图结构学习用于多变量预测
+- [2021](2021.md) — **高效 Transformer 主导 · 分解范式 · 扩散模型起步 · 神经算子奠基**
+  Informer（AAAI 最佳论文）以 ProbSparse 注意力开启长序列预测新时代，Autoformer 提出自相关分解机制确立分解范式，TFT 融合 LSTM 与注意力实现可解释多步预测，TimeGrad/CSDI 将扩散模型首次引入时序概率预测，GTS 探索图结构学习用于多变量预测，FNO 与 DeepONet 奠定神经算子学习的两条路线（谱域参数化 vs. branch-trunk 框架）
 
 - [2020](2020.md) — **GNN 多变量建模 · 可解释 MLP · 概率预测**
   N-BEATS 以纯全连接网络实现可解释预测成为 MLP 方向奠基之作，DeepAR 确立自回归概率预测范式，StemGNN/MTGNN 将图神经网络引入多变量时序建模，Transformer 开始在时序领域初步探索（AST, Deep Transformer）
