@@ -74,6 +74,7 @@ graph TD
     Timer --> MOIRAI["MOIRAI (2024)"]:::fm
     Timer --> Moment["MOMENT (2024)"]:::fm
     Timer --> Sundial["Sundial (2025)"]:::fm
+    Timer --> TimerXL["Timer-XL (2025)"]:::fm
     MOIRAI --> MoiraiMoE["Moirai-MoE (2025)"]:::fm
     MOIRAI --> Moirai2["Moirai 2.0 (2025)"]:::fm
     Sundial -.-> Aurora["Aurora (2026)"]:::fm
