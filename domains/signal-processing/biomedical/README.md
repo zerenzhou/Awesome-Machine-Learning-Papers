@@ -136,8 +136,9 @@ Cleanest benchmark progression — all three methods are foundation-model entrie
 | PhysioNet/CinC 2020 (12-lead, multi-label) | Challenge metric | Prna / Natarajan et al. (winner) | ~0.533 on hidden test | 2020 | [CinC 2020](https://physionet.org/content/challenge-2020/) |
 | PhysioNet/CinC 2021 (12-lead, multi-label) | Challenge metric | ISIBrno-AIMT (winner) | ~0.57 on hidden test | 2021 | [CinC 2021](https://moody-challenge.physionet.org/2021/) |
 | MIT-BIH Arrhythmia (AAMI 5-class, inter-patient) | Accuracy | Mousavi & Afghah / Transformer-based | ~93–95% | 2019–24 | [arXiv:1812.07421](https://arxiv.org/abs/1812.07421) |
+| MIT-BIH Arrhythmia (AAMI 4-class, inter-patient) | Accuracy | PathFusion-Net (Rough Path Theory + CNN-LSTM + Path Signatures) | 94.7% (+2.9 pp over prior best) | 2025 | [UCL Discovery PDF](https://discovery.ucl.ac.uk/id/eprint/10216614/) |
 
-> **Caveat — MIT-BIH**: the *intra*-patient split saturates above 99% and is not meaningful for benchmarking. Always check which split a paper uses before comparing.
+> **Caveat — MIT-BIH**: the *intra*-patient split saturates above 99% and is not meaningful for benchmarking. Always check which split a paper uses before comparing — the 2025 systematic review in [arXiv:2503.07276](https://arxiv.org/abs/2503.07276) documents how widespread protocol violations inflate reported numbers. Also beware mixing AAMI 4-class (often drops the rare F/fusion class) and AAMI 5-class results: the two are *not* directly comparable.
 
 ### Wearable Biosignals
 
