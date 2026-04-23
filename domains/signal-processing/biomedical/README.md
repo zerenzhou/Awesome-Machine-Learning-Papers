@@ -44,6 +44,10 @@ graph TD
     ECG --> PTBXL["PTB-XL Benchmark (2020)"]:::bio
     PTBXL --> ECGFM["ECG-FM (2024)"]:::fm
     ECGFM --> ECGFounder["ECGFounder 10M (2025)"]:::fm
+    ECGFounder --> DeepECGSSL["DeepECG-SSL (2026)"]:::fm
+    ECGFM --> ECGPostTrain["ECG FM Post-Training (2025)"]:::fm
+    ECGFounder -.-> ECGFMBench2["ECG-FM Holistic Benchmark (2026)"]:::bench
+    DeepECGSSL -.-> ECGFMBench2
 
     %% Wearable
     ECG12Lead -.-> WearableFM["Wearable FM (2024)"]:::fm
@@ -127,6 +131,8 @@ Cleanest benchmark progression — all three methods are foundation-model entrie
 | PTB-XL (superclass, multi-label) | Macro-AUC | xResNet1d101 (Strodthoff baseline) | ~0.93 | 2020 | [arXiv:2004.13701](https://arxiv.org/abs/2004.13701) |
 | PTB-XL (superclass, multi-label) | Macro-AUC | HuBERT-ECG / ECG-FM | ~0.94 (tight cluster) | 2024 | [ECG-FM arXiv:2408.05178](https://arxiv.org/abs/2408.05178) |
 | Harvard–Emory ECG DB (80 diagnoses) | AUROC | ECGFounder (10M ECGs) | >0.95 across 80 dx | 2025 | [NEJM AI](https://ai.nejm.org/doi/full/10.1056/AIoa2401033) |
+| Internal + external (77 conditions) | micro-AUROC | DeepECG-SSL (Wav2Vec + CMSC, ~2M ECGs) | 0.990 internal / 0.981–0.983 external | 2026 | [Eur Heart J](https://doi.org/10.1093/eurheartj/ehaf1119) |
+| PTB-XL (superclass, post-training) | Macro-AUROC / Macro-AUPRC | ECG-FM + Post-Training (Zhou et al.) | +0.7–8.9% AUROC / +23.3–77.9% AUPRC vs. FM baselines | 2025 | [arXiv:2509.12991](https://arxiv.org/abs/2509.12991) |
 | PhysioNet/CinC 2020 (12-lead, multi-label) | Challenge metric | Prna / Natarajan et al. (winner) | ~0.533 on hidden test | 2020 | [CinC 2020](https://physionet.org/content/challenge-2020/) |
 | PhysioNet/CinC 2021 (12-lead, multi-label) | Challenge metric | ISIBrno-AIMT (winner) | ~0.57 on hidden test | 2021 | [CinC 2021](https://moody-challenge.physionet.org/2021/) |
 | MIT-BIH Arrhythmia (AAMI 5-class, inter-patient) | Accuracy | Mousavi & Afghah / Transformer-based | ~93–95% | 2019–24 | [arXiv:1812.07421](https://arxiv.org/abs/1812.07421) |
@@ -143,8 +149,8 @@ Cleanest benchmark progression — all three methods are foundation-model entrie
 ## Contents
 
 - [Classic Papers](classic.md) — Foundational and pioneering works
-- [2026](2026.md) — Critical benchmark evaluation of EEG foundation models
-- [2025](2025.md) — NeuroLM · CBraMod · BrainOmni · NeurIPT · REVE · ALFEE · ECGFounder · Pulse-PPG · LibriBrain
+- [2026](2026.md) — EEG-FM benchmark critique · DeepECG-SSL (EHJ) · Looking-Beyond-Accuracy ECG-FM benchmark
+- [2025](2025.md) — NeuroLM · CBraMod · BrainOmni · NeurIPT · REVE · ALFEE · ECGFounder · ECG-FM Post-Training · Pulse-PPG · LibriBrain
 - [2024](2024.md) — LaBraM · Wearable FM · EEGPT · ECG-FM · NormWear
 - [2023](2023.md) — BrainBERT · EEG Conformer · BIOT
 - [2022](2022.md) — ATCNet MI-BCI · XSleepNet sleep staging
