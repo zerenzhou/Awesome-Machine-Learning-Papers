@@ -99,8 +99,14 @@ graph TD
     DeepONet["DeepONet (2021)"]:::nop --> LOCA["LOCA (2022)"]:::nop
     FNO["FNO (2021)"]:::nop --> LOCA
     FNO -.-> NOFramework["Neural Operator (2023)"]:::nop
+    NOFramework --> MambaNO["MambaNO (2024)"]:::nop
     LOCA --> KRNO["KRNO (2025)"]:::nop
     NOFramework --> KRNO
+    DeepONet --> TNO["TNO (2025)"]:::nop
+    DeepONet --> TIDeepONet["TI-DeepONet (2025)"]:::nop
+    FNO --> STFNO["Spatio-temporal FNO (2026)"]:::nop
+    FNO --> GFNOTraffic["Graph FNO Traffic (2026)"]:::nop
+    MambaNO --> PGMNO["PGMNO (2026)"]:::nop
 
     Linear -.->|"challenges"| Informer
     RevIN -.-> PatchTST
@@ -120,7 +126,7 @@ graph TD
 | ![Foundation Models & LLM](https://img.shields.io/badge/Foundation_Models_%26_LLM-E0E7FF?style=flat-square) | Large-scale pretrained models for zero-shot or few-shot forecasting, including LLM reprogramming and time series foundation models |
 | ![Probabilistic](https://img.shields.io/badge/Probabilistic-E5E7EB?style=flat-square) | Distributional forecasting via diffusion (ARMD, NsDiff), VAE (K²VAE), or autoregressive likelihood, capturing uncertainty beyond point estimates |
 | ![Representation Learning](https://img.shields.io/badge/Representation_Learning-DDD6FE?style=flat-square) | Self-supervised and contrastive methods learning universal time series representations for downstream tasks |
-| ![Neural Operator](https://img.shields.io/badge/Neural_Operator-BAE6FD?style=flat-square) | Operator-theoretic models learning mappings between function spaces (FNO, DeepONet, LOCA, KRNO), enabling discretization-invariant forecasting, super-resolution, and natural handling of irregularly sampled data |
+| ![Neural Operator](https://img.shields.io/badge/Neural_Operator-BAE6FD?style=flat-square) | Operator-theoretic models learning mappings between function spaces (FNO, DeepONet, LOCA, KRNO, TNO, TI-DeepONet, MambaNO, PGMNO), enabling discretization-invariant forecasting, super-resolution, long-range temporal extrapolation, and natural handling of irregularly sampled data |
 | ![Classic](https://img.shields.io/badge/⭐_Classic-FFD700?style=flat-square) | Pioneering works with high impact and citation, foundational to the field |
 
 ## Benchmark Datasets
@@ -179,13 +185,13 @@ With the rise of time series foundation models (2024+), pretraining corpora have
 - [Classic Papers](classic.md) — Foundational and pioneering works
 
 - [2026](2026.md) — **多模态基座模型与新架构融合**
-  多模态时序基座模型兴起（Aurora 融合文本/图像上下文），SSM 向多尺度演进（ms-Mamba），LLM 语义知识与时序模式的深度对齐（SE-LLM），Transformer 在嵌入层和非规则序列上持续增强（EMAformer, APN），视觉模型蒸馏进入时序领域（OccamVTS）
+  多模态时序基座模型兴起（Aurora 融合文本/图像上下文），SSM 向多尺度演进（ms-Mamba），LLM 语义知识与时序模式的深度对齐（SE-LLM），Transformer 在嵌入层和非规则序列上持续增强（EMAformer, APN），视觉模型蒸馏进入时序领域（OccamVTS），神经算子分化出三条路线（Spatio-temporal FNO 将 FNO 作为无显式 PDE 的统计动力学模型；PGMNO 把 BDF 多步积分嵌入 Mamba 作为物理一致归纳偏置；Graph FNO Traffic 将图卷积与图谱算子结合用于路网长程预测）
 
 - [2025](2025.md) — **基座模型规模化 · 扩散模型复兴 · MoE 与极简主义 · 神经算子成熟**
-  时序基座模型达到万亿级预训练规模（Sundial: 1T 时间点，Time-MoE: 2.4B 参数），MoE 稀疏专家带来效率突破（Moirai-MoE, Moirai 2.0），扩散模型在概率预测中全面回归（ARMD, NsDiff, CNDiff, K²VAE），极简模型挑战复杂架构（TimeBase: <0.4k 参数），检索增强（TS-RAG）和通用分析（TimeMixer++）拓宽应用边界，频域与小波方法持续演化（WPMixer, TimeFilter），KRNO 用 Khatri-Rao 核分解实现非平稳神经算子的近线性扩展
+  时序基座模型达到万亿级预训练规模（Sundial: 1T 时间点，Time-MoE: 2.4B 参数），MoE 稀疏专家带来效率突破（Moirai-MoE, Moirai 2.0），扩散模型在概率预测中全面回归（ARMD, NsDiff, CNDiff, K²VAE），极简模型挑战复杂架构（TimeBase: <0.4k 参数），检索增强（TS-RAG）和通用分析（TimeMixer++）拓宽应用边界，频域与小波方法持续演化（WPMixer, TimeFilter），神经算子分化出三条时序路线（KRNO 用 Khatri-Rao 核分解实现非平稳近线性扩展，TNO 给 DeepONet 加时间分支稳定长程外推，TI-DeepONet 用可学习数值积分器替代自回归滚动）
 
 - [2024](2024.md) — **基座模型元年 · 反转设计 · Mamba 入场 · 频域滤波**
-  时序基座模型集中爆发（TimesFM, Timer, MOIRAI, Chronos, MOMENT, UniTS），LLM 重编程用于时序（Time-LLM, AutoTimes），iTransformer 反转注意力维度成为新范式，Mamba/SSM 正式进入时序预测（S-Mamba, TimeMachine, MambaTS），频域方法分化出滤波（FilterNet）和周期建模（CycleNet）两条路线，极简 MLP 持续进化（SparseTSF, SOFTS），归一化（SAN）和外生变量（TimeXer）等子方向继续深入
+  时序基座模型集中爆发（TimesFM, Timer, MOIRAI, Chronos, MOMENT, UniTS），LLM 重编程用于时序（Time-LLM, AutoTimes），iTransformer 反转注意力维度成为新范式，Mamba/SSM 正式进入时序预测（S-Mamba, TimeMachine, MambaTS），频域方法分化出滤波（FilterNet）和周期建模（CycleNet）两条路线，极简 MLP 持续进化（SparseTSF, SOFTS），归一化（SAN）和外生变量（TimeXer）等子方向继续深入，神经算子首次与 SSM 融合（MambaNO 以 O(N) 复杂度统一全局扫描与无混叠局部积分）
 
 - [2023](2023.md) — **MLP vs Transformer 之争 · Patching 范式 · LLM 跨界**
   DLinear 以简单线性层挑战 Transformer 引发范式论战，PatchTST 确立 Patching 为时序 Transformer 核心设计，MLP 方法全面开花（N-HiTS, TiDE, TSMixer, Koopa），TimesNet 将 1D 序列转为 2D 张量开辟 CNN 新路径，LLM 首次跨界时序（GPT4TS, LLMTime），ClimaX 开启气象基座模型先河，频域（FreTS）和归一化（Dish-TS）形成独立子方向，SegRNN 证明 RNN 在长期预测中仍有竞争力
